@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "efa67ce8960d58eccd2a33940be33b49",
+    "content-hash": "de30db2b3b3e6fda8f62ed58dd3d2060",
     "packages": [
         {
             "name": "brick/math",
@@ -162,16 +162,16 @@
         },
         {
             "name": "exan/dhp",
-            "version": "0.1.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Exanlv/discord-dhp.git",
-                "reference": "c47870fe771cad1d79446f2445b31ee9cb3762b9"
+                "reference": "34935fd09807deaeac22a50d94950ed4d3f71e35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Exanlv/discord-dhp/zipball/c47870fe771cad1d79446f2445b31ee9cb3762b9",
-                "reference": "c47870fe771cad1d79446f2445b31ee9cb3762b9",
+                "url": "https://api.github.com/repos/Exanlv/discord-dhp/zipball/34935fd09807deaeac22a50d94950ed4d3f71e35",
+                "reference": "34935fd09807deaeac22a50d94950ed4d3f71e35",
                 "shasum": ""
             },
             "require": {
@@ -205,9 +205,9 @@
             "description": "Discord API & WS wrapper",
             "support": {
                 "issues": "https://github.com/Exanlv/discord-dhp/issues",
-                "source": "https://github.com/Exanlv/discord-dhp/tree/0.1.0"
+                "source": "https://github.com/Exanlv/discord-dhp/tree/0.2.1"
             },
-            "time": "2023-02-05T12:40:56+00:00"
+            "time": "2023-02-17T13:24:29+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -503,16 +503,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "3.2.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "305444bc6fb6c89e490f4b34fa6e979584d7fa81"
+                "reference": "9b5daeaffce5b926cac47923798bba91059e60e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/305444bc6fb6c89e490f4b34fa6e979584d7fa81",
-                "reference": "305444bc6fb6c89e490f4b34fa6e979584d7fa81",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/9b5daeaffce5b926cac47923798bba91059e60e2",
+                "reference": "9b5daeaffce5b926cac47923798bba91059e60e2",
                 "shasum": ""
             },
             "require": {
@@ -527,16 +527,16 @@
                 "doctrine/couchdb": "~1.0@dev",
                 "elasticsearch/elasticsearch": "^7 || ^8",
                 "ext-json": "*",
-                "graylog2/gelf-php": "^1.4.2",
-                "guzzlehttp/guzzle": "^7.4",
+                "graylog2/gelf-php": "^1.4.2 || ^2@dev",
+                "guzzlehttp/guzzle": "^7.4.5",
                 "guzzlehttp/psr7": "^2.2",
                 "mongodb/mongodb": "^1.8",
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
-                "phpstan/phpstan": "^1.4",
+                "phpstan/phpstan": "^1.9",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-strict-rules": "^1.1",
-                "phpunit/phpunit": "^9.5.16",
-                "predis/predis": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.4",
+                "phpunit/phpunit": "^9.5.26",
+                "predis/predis": "^1.1 || ^2",
                 "ruflin/elastica": "^7",
                 "symfony/mailer": "^5.4 || ^6",
                 "symfony/mime": "^5.4 || ^6"
@@ -588,7 +588,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.2.0"
+                "source": "https://github.com/Seldaek/monolog/tree/3.3.1"
             },
             "funding": [
                 {
@@ -600,7 +600,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-07-24T12:00:55+00:00"
+            "time": "2023-02-06T13:46:10+00:00"
         },
         {
             "name": "nesbot/carbon",

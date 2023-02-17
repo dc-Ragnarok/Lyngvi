@@ -10,6 +10,7 @@ use Exan\Dhp\Parts\Message;
 use Exan\Dhp\Rest\Helpers\Channel\EmbedBuilder;
 use Exan\Dhp\Rest\Helpers\Channel\MessageBuilder;
 use Exan\Dhp\Websocket\Events\MessageCreate;
+use Exan\Dhp\Websocket\Objects\Payload;
 use Psr\Log\LoggerInterface;
 use Throwable;
 
@@ -17,6 +18,7 @@ class StabilityBot
 {
     public Discord $discord;
     private Carbon $startTime;
+    private AnonymizedLogger $anonymizedLogger;
 
     public function __construct(
         private string $token,
@@ -28,6 +30,8 @@ class StabilityBot
         );
 
         $this->startTime = new Carbon();
+
+        $this->anonymizedLogger = new AnonymizedLogger();
     }
 
     public function register()
@@ -41,6 +45,10 @@ class StabilityBot
                 $this->report($messageCreate->channel_id);
             }
         });
+
+        // $this->discord->events->on(Events::RAW, function (Payload $payload) {
+        //     $this->anonymizedLogger->handlePayload($payload);
+        // });
     }
 
     public function report(string $channelId)
@@ -52,6 +60,7 @@ class StabilityBot
                     ->addField('Version', $this->libraryVersion)
                     ->addField('Uptime', $this->getUpTime())
                     ->addField('PHP Version', phpversion())
+                    ->addField('Host', gethostname())
                     ->setColor(8397467)
             );
 
@@ -77,5 +86,30 @@ class StabilityBot
         $difference = $now->diff($this->startTime);
 
         return $difference->format('%d days, %H:%I:%S');
+    }
+
+    protected function getArrayThing($data): array
+    {
+        $out = [];
+
+        $keys = array_keys($data);
+        sort($keys);
+
+        foreach ($keys as $key) {
+            if (is_array($data[$key]) && $this->isAssoc($data[$key])) {
+                $out[$key] = $this->getArrayThing($data[$key]);
+
+                continue;
+            }
+
+            $out[] = $key . gettype($data[$key]);
+        }
+
+        return $out;
+    }
+
+    protected function isAssoc(array $arr)
+    {
+
     }
 }

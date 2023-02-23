@@ -11,7 +11,7 @@ require_once './vendor/autoload.php';
 $lockFile = json_decode(file_get_contents('composer.lock'), true);
 
 $dhpVersion = array_values(array_filter(
-    $lockFile['packages'], fn ($package) => $package['name'] === 'exan/dhp'
+    $lockFile['packages'], fn ($package) => $package['name'] === 'exan/fenrir'
 ))[0]['version'];
 
 $dotenv = Dotenv::createImmutable(__DIR__);

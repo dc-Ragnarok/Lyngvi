@@ -13,6 +13,6 @@
     },
     "scripts": {
         "build": "docker build -t fenrir-stability .",
-        "run": "docker run -d fenrir-stability"
+        "run-build": "docker run -d fenrir-stability"
     }
 }

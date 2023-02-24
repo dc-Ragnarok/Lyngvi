@@ -10,5 +10,9 @@
         "monolog/monolog": "^3.2",
         "gabrielelana/byte-units": "^0.3.0",
         "nesbot/carbon": "^2.66"
+    },
+    "scripts": {
+        "build": "docker build -t fenrir-stability .",
+        "run": "docker run -d fenrir-stability"
     }
 }

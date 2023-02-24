@@ -5,7 +5,7 @@
         }
     },
     "require": {
-        "exan/fenrir": "0.3.0",
+        "exan/fenrir": "0.3.1",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",
         "gabrielelana/byte-units": "^0.3.0",

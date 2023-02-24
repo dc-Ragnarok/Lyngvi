@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c52d73690fe668b4c1351398e2efab36",
+    "content-hash": "b981b5f9c91d4210dacec04dc11a071b",
     "packages": [
         {
             "name": "brick/math",
@@ -162,16 +162,16 @@
         },
         {
             "name": "exan/fenrir",
-            "version": "0.3.0",
+            "version": "0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Exanlv/fenrir.git",
-                "reference": "64212f45465c647f4973831df5ec5b9fa104b967"
+                "reference": "a5e2bc4b69d4fa8cc522a9e44721813f72e43320"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Exanlv/fenrir/zipball/64212f45465c647f4973831df5ec5b9fa104b967",
-                "reference": "64212f45465c647f4973831df5ec5b9fa104b967",
+                "url": "https://api.github.com/repos/Exanlv/fenrir/zipball/a5e2bc4b69d4fa8cc522a9e44721813f72e43320",
+                "reference": "a5e2bc4b69d4fa8cc522a9e44721813f72e43320",
                 "shasum": ""
             },
             "require": {
@@ -206,9 +206,9 @@
             "description": "Discord API & WS wrapper",
             "support": {
                 "issues": "https://github.com/Exanlv/fenrir/issues",
-                "source": "https://github.com/Exanlv/fenrir/tree/0.3.0"
+                "source": "https://github.com/Exanlv/fenrir/tree/0.3.1"
             },
-            "time": "2023-02-23T22:22:08+00:00"
+            "time": "2023-02-24T08:31:50+00:00"
         },
         {
             "name": "fig/http-message-util",

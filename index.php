@@ -18,11 +18,9 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $log = new Logger('stability-bot');
-
-$log->pushHandler(new StreamHandler('./discord.log'));
+$log->pushHandler(new StreamHandler('php://stdout'));
 
 $bot = new StabilityBot($_ENV['TOKEN'], $log, $dhpVersion);
-
 $bot->register();
 
 $bot->discord->connect();

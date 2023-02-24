@@ -2,19 +2,14 @@
 
 namespace Exan\StabilityBot;
 
-use ByteUnits\Metric;
 use Carbon\Carbon;
 use Exan\Fenrir\Bitwise\Bitwise;
 use Exan\Fenrir\Const\Events;
 use Exan\Fenrir\Discord;
 use Exan\Fenrir\Enums\Gateway\Intents;
 use Exan\Fenrir\FilteredEventEmitter;
-use Exan\Fenrir\Parts\Message;
-use Exan\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
-use Exan\Fenrir\Rest\Helpers\Channel\MessageBuilder;
 use Exan\Fenrir\Websocket\Events\MessageCreate;
 use Psr\Log\LoggerInterface;
-use Throwable;
 
 class StabilityBot
 {
@@ -29,6 +24,7 @@ class StabilityBot
         $this->discord = new Discord(
             $token,
             Bitwise::from(...$this->getIntents()),
+            $logger
         );
 
         $this->startTime = new Carbon();
@@ -50,6 +46,8 @@ class StabilityBot
                 $report->toMessageBuilder()
             );
         });
+
+        $reportListener->start();
     }
 
     public function getIntents(): array

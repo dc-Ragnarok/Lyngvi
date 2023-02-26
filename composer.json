@@ -5,14 +5,11 @@
         }
     },
     "require": {
-        "exan/fenrir": "0.3.1",
+        "exan/fenrir": "dev-feat/application-commands@dev",
+        "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",
         "gabrielelana/byte-units": "^0.3.0",
         "nesbot/carbon": "^2.66"
-    },
-    "scripts": {
-        "build": "docker build -t fenrir-stability .",
-        "run-build": "docker run -d fenrir-stability"
     }
 }

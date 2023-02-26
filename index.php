@@ -23,4 +23,4 @@ $log->pushHandler(new StreamHandler('php://stdout'));
 $bot = new StabilityBot($_ENV['TOKEN'], $log, $dhpVersion);
 $bot->register();
 
-$bot->discord->connect();
+$bot->discord->gateway->connect();

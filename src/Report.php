@@ -7,8 +7,9 @@ namespace Exan\StabilityBot;
 use ByteUnits\Metric;
 use Carbon\Carbon;
 use DateInterval;
+use Exan\Fenrir\Command\Helpers\InteractionCallbackBuilder;
+use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
 use Exan\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
-use Exan\Fenrir\Rest\Helpers\Channel\MessageBuilder;
 
 class Report
 {
@@ -25,7 +26,7 @@ class Report
         $this->phpVersion = phpversion();
     }
 
-    public function toMessageBuilder(): MessageBuilder
+    public function toInteractionCallback(): InteractionCallbackBuilder
     {
         $embed = new EmbedBuilder();
 
@@ -33,8 +34,9 @@ class Report
             $embed->addField($name, $value);
         }
 
-        return (new MessageBuilder())
-            ->addEmbed($embed);
+        return (new InteractionCallbackBuilder())
+            ->addEmbed($embed)
+            ->setType(InteractionCallbackTypes::CHANNEL_MESSAGE_WITH_SOURCE);
     }
 
     /**

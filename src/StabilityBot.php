@@ -23,7 +23,7 @@ class StabilityBot
     ) {
         $this->discord = (new Discord(
             $token,
-            Bitwise::from(...$this->getIntents()),
+            new Bitwise(),
             $logger
         ))
             ->withGateway()
@@ -50,13 +50,5 @@ class StabilityBot
                 $command->sendFollowUpMessage($report->toInteractionCallback());
             }
         );
-    }
-
-    public function getIntents(): array
-    {
-        return [
-            Intents::GUILD_MESSAGES,
-            Intents::DIRECT_MESSAGES,
-        ];
     }
 }

@@ -28,7 +28,7 @@ class StabilityBot
         ))
             ->withGateway()
             ->withRest()
-            ->withCommandHandler('575395886117421083');
+            ->withCommandHandler();
 
 
         $this->startTime = new Carbon();

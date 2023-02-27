@@ -2,8 +2,7 @@
 
 use Dotenv\Dotenv;
 use Exan\StabilityBot\StabilityBot;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
+use Psr\Log\NullLogger;
 
 require_once './vendor/autoload.php';
 
@@ -17,10 +16,7 @@ $dhpVersion = array_values(array_filter(
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$log = new Logger('stability-bot');
-$log->pushHandler(new StreamHandler('php://stdout'));
-
-$bot = new StabilityBot($_ENV['TOKEN'], $log, $dhpVersion);
+$bot = new StabilityBot($_ENV['TOKEN'], new NullLogger(), $dhpVersion);
 $bot->register();
 
 $bot->discord->gateway->connect();

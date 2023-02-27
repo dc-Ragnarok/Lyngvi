@@ -50,5 +50,15 @@ class StabilityBot
                 $command->sendFollowUpMessage($report->toInteractionCallback());
             }
         );
+
+        $this->discord->command->registerCommand(
+            (new CommandBuilder)
+                ->setName('cat')
+                ->setDescription('Cat')
+                ->setType(ApplicationCommandTypes::CHAT_INPUT),
+            function (FiredCommand $command) {
+                $command->sendFollowUpMessage(Cat::new()->toInteractionCallback());
+            }
+        );
     }
 }

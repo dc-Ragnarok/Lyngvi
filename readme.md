@@ -2,7 +2,7 @@
     <img src="./assets/logo.svg" height="150px">
 </p>
 
-<p align=>Bot to monitor stability of <a href="https://github.com/Exanlv/fenrir">Fenrir</a></p>
+<p align="center">Bot to monitor stability of <a href="https://github.com/Exanlv/fenrir">Fenrir</a></p>
 
 ### Running
 

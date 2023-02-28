@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Exan\StabilityBot;
+namespace Tests\Ragnarok\Lyngvi;
 
 use Exan\Fenrir\CommandHandler;
 use Exan\Fenrir\Discord;

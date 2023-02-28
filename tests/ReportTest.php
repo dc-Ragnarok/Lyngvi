@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Exan\StabilityBot;
+namespace Tests\Ragnarok\Lyngvi;
 
 use DateInterval;
 use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;

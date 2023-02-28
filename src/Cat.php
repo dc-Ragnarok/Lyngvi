@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Exan\StabilityBot;
+namespace Ragnarok\Lyngvi;
 
 use Exan\Fenrir\Command\Helpers\InteractionCallbackBuilder;
 use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;

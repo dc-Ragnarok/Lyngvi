@@ -1,8 +1,10 @@
 <p align="center">
-    <img src="https://github.com/Exanlv/fenrir/raw/master/assets/logo.svg" height="150px">
+    <img src="./assets/logo.svg" height="150px">
 </p>
 
-Bot to monitor stability of [Fenrir](https://github.com/Exanlv/fenrir)
+<p style="text-align: center">
+    Bot to monitor stability of <a href="https://github.com/Exanlv/fenrir">Fenrir</a>
+</p>
 
 ### Running
 
@@ -12,7 +14,7 @@ cp .env.example .env
 
 Add required variables
 
-Then either run locally with `php index.php` or use Docker:
+Run locally with `php index.php` or use Docker:
 ```
 composer build;
 

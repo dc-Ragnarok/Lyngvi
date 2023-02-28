@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "Exan\\StabilityBot\\": "src/"
+            "Ragnarok\\Lyngvi\\": "src/"
         }
     },
     "require": {

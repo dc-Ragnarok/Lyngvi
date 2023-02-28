@@ -1,6 +1,6 @@
 <?php
 
-namespace Exan\StabilityBot;
+namespace Ragnarok\Lyngvi;
 
 use Carbon\Carbon;
 use Exan\Fenrir\Bitwise\Bitwise;

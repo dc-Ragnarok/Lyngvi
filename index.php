@@ -1,7 +1,7 @@
 <?php
 
 use Dotenv\Dotenv;
-use Exan\StabilityBot\StabilityBot;
+use Ragnarok\Lyngvi\StabilityBot;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 

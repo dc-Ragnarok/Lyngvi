@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Exan\StabilityBot;
+namespace Ragnarok\Lyngvi;
 
 use ByteUnits\Metric;
 use Carbon\Carbon;

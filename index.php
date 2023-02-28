@@ -2,10 +2,10 @@
 
 use Dotenv\Dotenv;
 use Exan\StabilityBot\StabilityBot;
-use Psr\Log\NullLogger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 require_once './vendor/autoload.php';
-
 
 $lockFile = json_decode(file_get_contents('composer.lock'), true);
 
@@ -16,7 +16,16 @@ $dhpVersion = array_values(array_filter(
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$bot = new StabilityBot($_ENV['TOKEN'], new NullLogger(), $dhpVersion);
+$log = new Logger('stability-bot');
+$log->pushHandler(new StreamHandler('php://stdout'));
+
+$bot = new StabilityBot(
+    $_ENV['TOKEN'],
+    $log,
+    $dhpVersion,
+    isset($_ENV['DEV_GUILD']) ? $_ENV['DEV_GUILD'] : null
+);
+
 $bot->register();
 
 $bot->discord->gateway->connect();

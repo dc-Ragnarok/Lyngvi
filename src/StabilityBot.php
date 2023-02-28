@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use Exan\Fenrir\Bitwise\Bitwise;
 use Exan\Fenrir\Command\FiredCommand;
 use Exan\Fenrir\Discord;
-use Exan\Fenrir\Enums\Gateway\Intents;
 use Exan\Fenrir\Enums\Parts\ApplicationCommandTypes;
 use Exan\Fenrir\Rest\Helpers\Command\CommandBuilder;
 use Psr\Log\LoggerInterface;
@@ -19,7 +18,8 @@ class StabilityBot
     public function __construct(
         private string $token,
         private LoggerInterface $logger,
-        private string $libraryVersion
+        private string $libraryVersion,
+        private ?string $devGuild = null
     ) {
         $this->discord = (new Discord(
             $token,
@@ -28,8 +28,7 @@ class StabilityBot
         ))
             ->withGateway()
             ->withRest()
-            ->withCommandHandler();
-
+            ->withCommandHandler($this->devGuild);
 
         $this->startTime = new Carbon();
     }

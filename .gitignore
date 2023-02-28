@@ -2,3 +2,4 @@ vendor/
 .env
 discord.log
 anonymized_logs/
+.phpunit.cache

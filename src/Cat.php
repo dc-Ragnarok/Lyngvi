@@ -27,12 +27,10 @@ class Cat
 
     public function toInteractionCallback(): InteractionCallbackBuilder
     {
-        $embed = new EmbedBuilder();
-
-        $embed->setImage($this->getUrl());
-
-        return (new InteractionCallbackBuilder())
+        return InteractionCallbackBuilder::new()
             ->setType(InteractionCallbackTypes::CHANNEL_MESSAGE_WITH_SOURCE)
-            ->addEmbed($embed);
+            ->addEmbed(
+                EmbedBuilder::new()->setImage($this->getUrl())
+            );
     }
 }

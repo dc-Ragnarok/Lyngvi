@@ -34,7 +34,7 @@ class Report
             $embed->addField($name, $value);
         }
 
-        return (new InteractionCallbackBuilder())
+        return InteractionCallbackBuilder::new()
             ->addEmbed($embed)
             ->setType(InteractionCallbackTypes::CHANNEL_MESSAGE_WITH_SOURCE);
     }

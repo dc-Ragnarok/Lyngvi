@@ -68,12 +68,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/discord-php/DiscordPHP-Http.git",
-                "reference": "3568e9bb25d41f2f48a0961df8ff001593ec29bc"
+                "reference": "5152a8f4ba7f71ae6c5e4785488d9c59e3fd851e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/discord-php/DiscordPHP-Http/zipball/3568e9bb25d41f2f48a0961df8ff001593ec29bc",
-                "reference": "3568e9bb25d41f2f48a0961df8ff001593ec29bc",
+                "url": "https://api.github.com/repos/discord-php/DiscordPHP-Http/zipball/5152a8f4ba7f71ae6c5e4785488d9c59e3fd851e",
+                "reference": "5152a8f4ba7f71ae6c5e4785488d9c59e3fd851e",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,8 @@
                 "mockery/mockery": "^1.5",
                 "monolog/monolog": "^2.2",
                 "phpunit/phpunit": "^9.5",
-                "psy/psysh": "^0.10.6"
+                "psy/psysh": "^0.10.6",
+                "react/async": "^4 || ^3"
             },
             "suggest": {
                 "guzzlehttp/guzzle": "For alternative to ReactPHP/Http Browser"
@@ -115,7 +116,7 @@
                 "issues": "https://github.com/discord-php/DiscordPHP-Http/issues",
                 "source": "https://github.com/discord-php/DiscordPHP-Http/tree/master"
             },
-            "time": "2023-02-22T21:54:24+00:00"
+            "time": "2023-03-03T18:10:46+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -169,13 +170,13 @@
             "version": "dev-feat/application-commands",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Exanlv/fenrir.git",
-                "reference": "5ab43be6cfa9fd32ffe790c19eeeca8be9d4fbcc"
+                "url": "https://github.com/Exanlv/Fenrir.git",
+                "reference": "b815175bc511b43c57a5031df7ac855c36d866c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Exanlv/fenrir/zipball/5ab43be6cfa9fd32ffe790c19eeeca8be9d4fbcc",
-                "reference": "5ab43be6cfa9fd32ffe790c19eeeca8be9d4fbcc",
+                "url": "https://api.github.com/repos/Exanlv/Fenrir/zipball/b815175bc511b43c57a5031df7ac855c36d866c5",
+                "reference": "b815175bc511b43c57a5031df7ac855c36d866c5",
                 "shasum": ""
             },
             "require": {
@@ -211,10 +212,10 @@
             ],
             "description": "Discord API & WS wrapper",
             "support": {
-                "issues": "https://github.com/Exanlv/fenrir/issues",
-                "source": "https://github.com/Exanlv/fenrir/tree/feat/application-commands"
+                "issues": "https://github.com/Exanlv/Fenrir/issues",
+                "source": "https://github.com/Exanlv/Fenrir/tree/feat/application-commands"
             },
-            "time": "2023-02-26T19:58:44+00:00"
+            "time": "2023-03-04T15:14:45+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -2499,16 +2500,16 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "1ee04c65529dea5d8744774d474e7cbd2f1206d3"
+                "reference": "e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/1ee04c65529dea5d8744774d474e7cbd2f1206d3",
-                "reference": "1ee04c65529dea5d8744774d474e7cbd2f1206d3",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e",
+                "reference": "e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e",
                 "shasum": ""
             },
             "require": {
@@ -2546,7 +2547,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.2.0"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -2562,7 +2563,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-25T10:21:52+00:00"
+            "time": "2023-03-01T10:25:55+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2814,16 +2815,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v6.2.5",
+            "version": "v6.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "60556925a703cfbc1581cde3b3f35b0bb0ea904c"
+                "reference": "90db1c6138c90527917671cd9ffa9e8b359e3a73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/60556925a703cfbc1581cde3b3f35b0bb0ea904c",
-                "reference": "60556925a703cfbc1581cde3b3f35b0bb0ea904c",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/90db1c6138c90527917671cd9ffa9e8b359e3a73",
+                "reference": "90db1c6138c90527917671cd9ffa9e8b359e3a73",
                 "shasum": ""
             },
             "require": {
@@ -2892,7 +2893,7 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/translation/tree/v6.2.5"
+                "source": "https://github.com/symfony/translation/tree/v6.2.7"
             },
             "funding": [
                 {
@@ -2908,20 +2909,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-05T07:00:27+00:00"
+            "time": "2023-02-24T10:42:00+00:00"
         },
         {
             "name": "symfony/translation-contracts",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation-contracts.git",
-                "reference": "68cce71402305a015f8c1589bfada1280dc64fe7"
+                "reference": "dfec258b9dd17a6b24420d464c43bffe347441c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/68cce71402305a015f8c1589bfada1280dc64fe7",
-                "reference": "68cce71402305a015f8c1589bfada1280dc64fe7",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/dfec258b9dd17a6b24420d464c43bffe347441c8",
+                "reference": "dfec258b9dd17a6b24420d464c43bffe347441c8",
                 "shasum": ""
             },
             "require": {
@@ -2973,7 +2974,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/translation-contracts/tree/v3.2.0"
+                "source": "https://github.com/symfony/translation-contracts/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -2989,7 +2990,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-25T10:21:52+00:00"
+            "time": "2023-03-01T10:32:47+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3746,16 +3747,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.0.13",
+            "version": "10.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c37a88d7a905266eab6498817a1bf1170043313f"
+                "reference": "7065dbebcb0f66cf16a45fc9cfc28c2351e06169"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c37a88d7a905266eab6498817a1bf1170043313f",
-                "reference": "c37a88d7a905266eab6498817a1bf1170043313f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7065dbebcb0f66cf16a45fc9cfc28c2351e06169",
+                "reference": "7065dbebcb0f66cf16a45fc9cfc28c2351e06169",
                 "shasum": ""
             },
             "require": {
@@ -3826,7 +3827,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.13"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.14"
             },
             "funding": [
                 {
@@ -3842,7 +3843,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-27T13:07:57+00:00"
+            "time": "2023-03-01T05:37:49+00:00"
         },
         {
             "name": "sebastian/cli-parser",

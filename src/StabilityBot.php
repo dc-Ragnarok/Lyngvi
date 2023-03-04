@@ -36,7 +36,7 @@ class StabilityBot
     public function register()
     {
         $this->discord->command->registerCommand(
-            (new CommandBuilder())
+            CommandBuilder::new()
                 ->setName('status')
                 ->setDescription('Generate a status report')
                 ->setType(ApplicationCommandTypes::CHAT_INPUT),
@@ -51,7 +51,7 @@ class StabilityBot
         );
 
         $this->discord->command->registerCommand(
-            (new CommandBuilder())
+            CommandBuilder::new()
                 ->setName('cat')
                 ->setDescription('Cat')
                 ->setType(ApplicationCommandTypes::CHAT_INPUT),

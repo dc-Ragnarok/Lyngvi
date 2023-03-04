@@ -1,4 +1,5 @@
 {
+    "name": "ragnarok/lyngvi",
     "autoload": {
         "psr-4": {
             "Ragnarok\\Lyngvi\\": "src/"

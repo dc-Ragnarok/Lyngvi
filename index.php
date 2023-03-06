@@ -13,17 +13,23 @@ $dhpVersion = array_values(array_filter(
     $lockFile['packages'], fn ($package) => $package['name'] === 'exan/fenrir'
 ))[0]['version'];
 
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+if (file_exists('.env')) {
+    $dotenv = Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+}
+
+function env(string $key, mixed $default = null) {
+    return $_ENV[$key] ?? getenv($key) ?? $default;
+}
 
 $log = new Logger('stability-bot');
 $log->pushHandler(new StreamHandler('php://stdout'));
 
 $bot = new StabilityBot(
-    $_ENV['TOKEN'],
+    env('TOKEN'),
     $log,
     $dhpVersion,
-    isset($_ENV['DEV_GUILD']) ? $_ENV['DEV_GUILD'] : null
+    env('DEV_GUILD')
 );
 
 $bot->register();

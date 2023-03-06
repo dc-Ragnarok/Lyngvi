@@ -3,7 +3,7 @@ build:
 
 build-run:
 	docker rm --force Lyngvi; \
-	docker run --name Lyngvi -d fenrir-stability
+	docker run --env-file .env --name Lyngvi -d fenrir-stability
 
 cs:
 	composer cs

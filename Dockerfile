@@ -2,7 +2,6 @@ FROM fedora:37
 
 COPY ./src /usr/src/fenrir-stability/src
 COPY ./index.php /usr/src/fenrir-stability
-COPY ./.env /usr/src/fenrir-stability
 COPY ./composer.* /usr/src/fenrir-stability/
 
 WORKDIR /usr/src/fenrir-stability

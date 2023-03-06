@@ -14,12 +14,18 @@ $dhpVersion = array_values(array_filter(
 ))[0]['version'];
 
 $dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->required('TOKEN');
 $dotenv->safeLoad();
 
-$token = getenv('TOKEN');
-$devGuild = getenv('DEV_GUILD');
-$devGuild = $devGuild === false ? null : $devGuild;
+$dotenv->required('TOKEN');
+
+function env(string $key, mixed $default = null) {
+    $var = isset($_ENV[$key]) ? $_ENV[$key] : getenv($key);
+
+    return $var === false ? $default : $var;
+}
+
+$token = env('TOKEN');
+$devGuild = env('DEV_GUILD');
 
 $log = new Logger('stability-bot');
 $log->pushHandler(new StreamHandler('php://stdout'));

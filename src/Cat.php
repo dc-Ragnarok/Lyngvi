@@ -31,7 +31,7 @@ class Cat
         $url = self::BASE_URL . 'cat';
 
         if (isset($this->says)) {
-            $url .= '/says/' . urlencode($this->says);
+            $url .= '/says/' . $this->says;
         }
 
         /** Discord caches images by URL, prevented by query */

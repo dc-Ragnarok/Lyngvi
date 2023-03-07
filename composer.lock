@@ -167,16 +167,16 @@
         },
         {
             "name": "exan/fenrir",
-            "version": "0.4.1",
+            "version": "0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dc-Ragnarok/Fenrir.git",
-                "reference": "9114a4bf89e92689d432cba8f399abf2ec69277b"
+                "reference": "28b74163d6e23e5761b106f666b34b45d80e856b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/9114a4bf89e92689d432cba8f399abf2ec69277b",
-                "reference": "9114a4bf89e92689d432cba8f399abf2ec69277b",
+                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/28b74163d6e23e5761b106f666b34b45d80e856b",
+                "reference": "28b74163d6e23e5761b106f666b34b45d80e856b",
                 "shasum": ""
             },
             "require": {
@@ -213,9 +213,9 @@
             "description": "Discord API & WS wrapper",
             "support": {
                 "issues": "https://github.com/dc-Ragnarok/Fenrir/issues",
-                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/0.4.1"
+                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/0.4.2"
             },
-            "time": "2023-03-05T22:40:09+00:00"
+            "time": "2023-03-07T13:01:59+00:00"
         },
         {
             "name": "fig/http-message-util",

@@ -26,12 +26,25 @@ class Cat
         return $this;
     }
 
+    private function percentEncode($plain): string
+    {
+        $res = array_map(
+            fn (string $char) =>
+                !ctype_alnum($char) && !in_array($char, ['-', '_', '.', '~'])
+                    ? '%' . strtoupper(dechex(ord($char)))
+                    : $char,
+            str_split($plain)
+        );
+
+        return implode('', $res);
+    }
+
     private function getUrl(): string
     {
         $url = self::BASE_URL . 'cat';
 
         if (isset($this->says)) {
-            $url .= '/says/' . $this->says;
+            $url .= '/says/' . $this->percentEncode($this->says);
         }
 
         /** Discord caches images by URL, prevented by query */

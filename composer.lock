@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e10ec3149e6ce5b283bcce44272f7b2",
+    "content-hash": "6063bf56e2951c043734385102bb1ddb",
     "packages": [
         {
             "name": "brick/math",
@@ -167,16 +167,16 @@
         },
         {
             "name": "exan/fenrir",
-            "version": "0.4.1",
+            "version": "dev-feature/command-options",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dc-Ragnarok/Fenrir.git",
-                "reference": "9114a4bf89e92689d432cba8f399abf2ec69277b"
+                "reference": "f3bbef47cad40ea865b1f0c13aaa0ab49afbdc33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/9114a4bf89e92689d432cba8f399abf2ec69277b",
-                "reference": "9114a4bf89e92689d432cba8f399abf2ec69277b",
+                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/f3bbef47cad40ea865b1f0c13aaa0ab49afbdc33",
+                "reference": "f3bbef47cad40ea865b1f0c13aaa0ab49afbdc33",
                 "shasum": ""
             },
             "require": {
@@ -213,9 +213,9 @@
             "description": "Discord API & WS wrapper",
             "support": {
                 "issues": "https://github.com/dc-Ragnarok/Fenrir/issues",
-                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/0.4.1"
+                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/feature/command-options"
             },
-            "time": "2023-03-05T22:40:09+00:00"
+            "time": "2023-03-07T20:35:06+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -4864,6 +4864,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "exan/fenrir": 20,
         "discord-php/http": 20
     },
     "prefer-stable": false,

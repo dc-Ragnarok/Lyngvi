@@ -6,8 +6,10 @@ use Carbon\Carbon;
 use Exan\Fenrir\Bitwise\Bitwise;
 use Exan\Fenrir\Command\FiredCommand;
 use Exan\Fenrir\Discord;
+use Exan\Fenrir\Enums\Command\OptionTypes;
 use Exan\Fenrir\Enums\Parts\ApplicationCommandTypes;
 use Exan\Fenrir\Rest\Helpers\Command\CommandBuilder;
+use Exan\Fenrir\Rest\Helpers\Command\CommandOptionBuilder;
 use Psr\Log\LoggerInterface;
 
 class StabilityBot
@@ -54,9 +56,22 @@ class StabilityBot
             CommandBuilder::new()
                 ->setName('cat')
                 ->setDescription('Cat')
-                ->setType(ApplicationCommandTypes::CHAT_INPUT),
+                ->setType(ApplicationCommandTypes::CHAT_INPUT)
+                ->addOption(
+                    CommandOptionBuilder::new()
+                        ->setType(OptionTypes::STRING)
+                        ->setName('says')
+                        ->setDescription('hell do I know')
+                ),
             function (FiredCommand $command) {
-                $command->sendFollowUpMessage(Cat::new()->toInteractionCallback());
+                $cat = Cat::new();
+
+                $data = $command->interaction->data;
+                if (isset($data->options) && count($data->options) > 0) {
+                    $cat->says($data->options[0]->value);
+                }
+
+                $command->sendFollowUpMessage($cat->toInteractionCallback());
             }
         );
     }

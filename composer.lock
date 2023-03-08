@@ -171,12 +171,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dc-Ragnarok/Fenrir.git",
-                "reference": "f3bbef47cad40ea865b1f0c13aaa0ab49afbdc33"
+                "reference": "908469e3ffe66f3f1d5e78c36bf8e77ab2ee8fb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/f3bbef47cad40ea865b1f0c13aaa0ab49afbdc33",
-                "reference": "f3bbef47cad40ea865b1f0c13aaa0ab49afbdc33",
+                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/908469e3ffe66f3f1d5e78c36bf8e77ab2ee8fb9",
+                "reference": "908469e3ffe66f3f1d5e78c36bf8e77ab2ee8fb9",
                 "shasum": ""
             },
             "require": {
@@ -215,7 +215,7 @@
                 "issues": "https://github.com/dc-Ragnarok/Fenrir/issues",
                 "source": "https://github.com/dc-Ragnarok/Fenrir/tree/feature/command-options"
             },
-            "time": "2023-03-07T20:35:06+00:00"
+            "time": "2023-03-08T10:06:55+00:00"
         },
         {
             "name": "fig/http-message-util",

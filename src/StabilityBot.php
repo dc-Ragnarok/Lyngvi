@@ -74,5 +74,17 @@ class StabilityBot
                 $command->sendFollowUpMessage($cat->toInteractionCallback());
             }
         );
+
+        $this->discord->command->registerCommand(
+            CommandBuilder::new()
+                ->setName('duck')
+                ->setDescription('Quack')
+                ->setType(ApplicationCommandTypes::CHAT_INPUT),
+            function (FiredCommand $command) {
+                Duck::fetch()->then(function (Duck $duck) use ($command) {
+                    $command->sendFollowUpMessage($duck->toInteractionCallback());
+                });
+            }
+        );
     }
 }

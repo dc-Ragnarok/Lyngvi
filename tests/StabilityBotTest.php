@@ -50,6 +50,17 @@ class StabilityBotTest extends MockeryTestCase
             Mockery::on(fn ($v) => true)
         )->once();
 
+        $stabilityBot->discord->command->shouldReceive('registerCommand')->with(
+            Mockery::on(function ($commandBuilder) {
+                if (!$commandBuilder instanceof CommandBuilder) {
+                    return false;
+                }
+
+                return $commandBuilder->get()['name'] === 'duck';
+            }),
+            Mockery::on(fn ($v) => true)
+        )->once();
+
         $stabilityBot->register();
     }
 }

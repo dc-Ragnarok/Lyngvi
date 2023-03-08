@@ -7,21 +7,39 @@ namespace Ragnarok\Lyngvi;
 use Exan\Fenrir\Command\Helpers\InteractionCallbackBuilder;
 use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
 use Exan\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
+use Exan\Fenrir\Rest\Helpers\Webhook\WebhookBuilder;
+use Psr\Http\Message\ResponseInterface;
+use React\EventLoop\LoopInterface;
+use React\Http\Browser;
+use React\Promise\ExtendedPromiseInterface;
 
 class Cat
 {
     private const BASE_URL = 'https://cataas.com/';
 
-    private string $says;
-
-    public static function new(): static
+    private function __construct(private string $url)
     {
-        return new static();
+    }
+
+    /**
+     * @return ExtendedPromiseInterface<\Ragnarok\Lyngvi\Cat>
+     */
+    public static function fetch(?LoopInterface $loop = null): ExtendedPromiseInterface
+    {
+        $url = self::BASE_URL . 'cat?json=true';
+
+        $http = new Browser(loop: $loop);
+
+        return $http->get($url)->then(function (ResponseInterface $response) {
+            $body = json_decode((string) $response->getBody());
+
+            return new Cat(self::BASE_URL . $body->url);
+        });
     }
 
     public function says(string $text): self
     {
-        $this->says = $text;
+        $this->url .= '/says/' . $this->percentEncode($text);
 
         return $this;
     }
@@ -39,24 +57,11 @@ class Cat
         return implode('', $res);
     }
 
-    private function getUrl(): string
+    public function toWebhook(): WebhookBuilder
     {
-        $url = self::BASE_URL . 'cat';
-
-        if (isset($this->says)) {
-            $url .= '/says/' . $this->percentEncode($this->says);
-        }
-
-        /** Discord caches images by URL, prevented by query */
-        return $url . '?' . http_build_query(['no-cache' => rand(10000, 99999)]);
-    }
-
-    public function toInteractionCallback(): InteractionCallbackBuilder
-    {
-        return InteractionCallbackBuilder::new()
-            ->setType(InteractionCallbackTypes::CHANNEL_MESSAGE_WITH_SOURCE)
+        return WebhookBuilder::new()
             ->addEmbed(
-                EmbedBuilder::new()->setImage($this->getUrl())
+                EmbedBuilder::new()->setImage($this->url)
             );
     }
 }

@@ -66,14 +66,21 @@ class StabilityBot
                         ->setDescription('hell do I know')
                 ),
             function (FiredCommand $command) {
-                $cat = Cat::new();
+                $command->createInteractionResponse(
+                    InteractionCallbackBuilder::new()
+                        ->setType(InteractionCallbackTypes::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)
+                )->then(static function () {
+                    return Cat::fetch();
+                })->then(static function (Cat $cat) use ($command) {
+                    $data = $command->interaction->data;
+                    if (isset($data->options) && count($data->options) > 0) {
+                        $cat->says($data->options[0]->value);
+                    }
 
-                $data = $command->interaction->data;
-                if (isset($data->options) && count($data->options) > 0) {
-                    $cat->says($data->options[0]->value);
-                }
-
-                $command->createInteractionResponse($cat->toInteractionCallback());
+                    $command->editInteractionResponse(
+                        $cat->toWebhook()
+                    );
+                });
             }
         );
 

@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Ragnarok\Lyngvi;
 
-use Exan\Fenrir\Command\Helpers\InteractionCallbackBuilder;
-use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
 use Exan\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
+use Exan\Fenrir\Rest\Helpers\Webhook\WebhookBuilder;
 use Psr\Http\Message\ResponseInterface;
-use Ragnarok\Lyngvi\Exceptions\DuckNotFetchedException;
-use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
 use React\Http\Browser;
 use React\Promise\ExtendedPromiseInterface;
@@ -34,10 +31,9 @@ class Duck
         });
     }
 
-    public function toInteractionCallback(): InteractionCallbackBuilder
+    public function toWebhook(): WebhookBuilder
     {
-        return InteractionCallbackBuilder::new()
-            ->setType(InteractionCallbackTypes::CHANNEL_MESSAGE_WITH_SOURCE)
+        return WebhookBuilder::new()
             ->addEmbed(
                 EmbedBuilder::new()->setImage($this->url)
             );

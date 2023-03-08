@@ -5,7 +5,9 @@ namespace Ragnarok\Lyngvi;
 use Carbon\Carbon;
 use Exan\Fenrir\Bitwise\Bitwise;
 use Exan\Fenrir\Command\FiredCommand;
+use Exan\Fenrir\Command\Helpers\InteractionCallbackBuilder;
 use Exan\Fenrir\Discord;
+use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
 use Exan\Fenrir\Enums\Command\OptionTypes;
 use Exan\Fenrir\Enums\Parts\ApplicationCommandTypes;
 use Exan\Fenrir\Rest\Helpers\Command\CommandBuilder;
@@ -48,7 +50,7 @@ class StabilityBot
                     $this->startTime
                 );
 
-                $command->sendFollowUpMessage($report->toInteractionCallback());
+                $command->createInteractionResponse($report->toInteractionCallback());
             }
         );
 
@@ -71,7 +73,7 @@ class StabilityBot
                     $cat->says($data->options[0]->value);
                 }
 
-                $command->sendFollowUpMessage($cat->toInteractionCallback());
+                $command->createInteractionResponse($cat->toInteractionCallback());
             }
         );
 
@@ -81,8 +83,15 @@ class StabilityBot
                 ->setDescription('Quack')
                 ->setType(ApplicationCommandTypes::CHAT_INPUT),
             function (FiredCommand $command) {
-                Duck::fetch()->then(function (Duck $duck) use ($command) {
-                    $command->sendFollowUpMessage($duck->toInteractionCallback());
+                $command->createInteractionResponse(
+                    InteractionCallbackBuilder::new()
+                        ->setType(InteractionCallbackTypes::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)
+                )->then(static function () {
+                    return Duck::fetch();
+                })->then(static function (Duck $duck) use ($command) {
+                    $command->editInteractionResponse(
+                        $duck->toWebhook()
+                    );
                 });
             }
         );

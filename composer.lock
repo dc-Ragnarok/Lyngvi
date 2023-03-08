@@ -171,12 +171,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dc-Ragnarok/Fenrir.git",
-                "reference": "908469e3ffe66f3f1d5e78c36bf8e77ab2ee8fb9"
+                "reference": "54c75c88ca813689961827b42884873346a5e590"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/908469e3ffe66f3f1d5e78c36bf8e77ab2ee8fb9",
-                "reference": "908469e3ffe66f3f1d5e78c36bf8e77ab2ee8fb9",
+                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/54c75c88ca813689961827b42884873346a5e590",
+                "reference": "54c75c88ca813689961827b42884873346a5e590",
                 "shasum": ""
             },
             "require": {
@@ -215,7 +215,7 @@
                 "issues": "https://github.com/dc-Ragnarok/Fenrir/issues",
                 "source": "https://github.com/dc-Ragnarok/Fenrir/tree/feature/command-options"
             },
-            "time": "2023-03-08T10:06:55+00:00"
+            "time": "2023-03-08T17:29:11+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -3203,16 +3203,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.11.0",
+            "version": "1.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "14daed4296fae74d9e3201d2c4925d1acb7aa614"
+                "reference": "7284c22080590fb39f2ffa3e9057f10a4ddd0e0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/14daed4296fae74d9e3201d2c4925d1acb7aa614",
-                "reference": "14daed4296fae74d9e3201d2c4925d1acb7aa614",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/7284c22080590fb39f2ffa3e9057f10a4ddd0e0c",
+                "reference": "7284c22080590fb39f2ffa3e9057f10a4ddd0e0c",
                 "shasum": ""
             },
             "require": {
@@ -3250,7 +3250,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.11.0"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.11.1"
             },
             "funding": [
                 {
@@ -3258,7 +3258,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-03T13:19:32+00:00"
+            "time": "2023-03-08T13:26:56+00:00"
         },
         {
             "name": "nikic/php-parser",

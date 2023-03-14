@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Ragnarok\Lyngvi;
 
-use Exan\Fenrir\Command\Helpers\InteractionCallbackBuilder;
-use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
 use Exan\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
-use Exan\Fenrir\Rest\Helpers\Webhook\WebhookBuilder;
+use Exan\Fenrir\Rest\Helpers\Webhook\EditWebhookBuilder;
 use Psr\Http\Message\ResponseInterface;
 use React\EventLoop\LoopInterface;
 use React\Http\Browser;
@@ -57,9 +55,9 @@ class Cat
         return implode('', $res);
     }
 
-    public function toWebhook(): WebhookBuilder
+    public function toWebhook(): EditWebhookBuilder
     {
-        return WebhookBuilder::new()
+        return EditWebhookBuilder::new()
             ->addEmbed(
                 EmbedBuilder::new()->setImage($this->url)
             );

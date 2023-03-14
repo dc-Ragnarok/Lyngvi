@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Ragnarok\Lyngvi;
 
 use Exan\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
+use Exan\Fenrir\Rest\Helpers\Webhook\EditWebhookBuilder;
 use Exan\Fenrir\Rest\Helpers\Webhook\WebhookBuilder;
 use Psr\Http\Message\ResponseInterface;
 use React\EventLoop\LoopInterface;
@@ -31,9 +32,21 @@ class Duck
         });
     }
 
-    public function toWebhook(): WebhookBuilder
+    public function says(string $text): self
     {
-        return WebhookBuilder::new()
+        $filename = str_replace('https://random-d.uk/api/', '', $this->url);
+
+        $this->url = 'https://r-duk.gumlet.io/' . $filename . '?' . http_build_query([
+            'text' => $text,
+            'text_width_pct' => 0.8
+        ]);
+
+        return $this;
+    }
+
+    public function toWebhook(): EditWebhookBuilder
+    {
+        return EditWebhookBuilder::new()
             ->addEmbed(
                 EmbedBuilder::new()->setImage($this->url)
             );

@@ -8,7 +8,7 @@ use Exan\Fenrir\Command\FiredCommand;
 use Exan\Fenrir\Command\Helpers\InteractionCallbackBuilder;
 use Exan\Fenrir\Discord;
 use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
-use Exan\Fenrir\Enums\Command\OptionTypes;
+use Exan\Fenrir\Enums\Parts\ApplicationCommandOptionTypes;
 use Exan\Fenrir\Enums\Parts\ApplicationCommandTypes;
 use Exan\Fenrir\Rest\Helpers\Command\CommandBuilder;
 use Exan\Fenrir\Rest\Helpers\Command\CommandOptionBuilder;
@@ -27,10 +27,9 @@ class StabilityBot
     ) {
         $this->discord = (new Discord(
             $token,
-            new Bitwise(),
             $logger
         ))
-            ->withGateway()
+            ->withGateway(new Bitwise())
             ->withRest()
             ->withCommandHandler($this->devGuild);
 
@@ -61,7 +60,7 @@ class StabilityBot
                 ->setType(ApplicationCommandTypes::CHAT_INPUT)
                 ->addOption(
                     CommandOptionBuilder::new()
-                        ->setType(OptionTypes::STRING)
+                        ->setType(ApplicationCommandOptionTypes::STRING)
                         ->setName('says')
                         ->setDescription('hell do I know')
                 ),
@@ -72,9 +71,8 @@ class StabilityBot
                 )->then(static function () {
                     return Cat::fetch();
                 })->then(static function (Cat $cat) use ($command) {
-                    $data = $command->interaction->data;
-                    if (isset($data->options) && count($data->options) > 0) {
-                        $cat->says($data->options[0]->value);
+                    if ($command->hasOption('says')) {
+                        $cat->says($command->getOption('says')->value);
                     }
 
                     $command->editInteractionResponse(
@@ -88,7 +86,13 @@ class StabilityBot
             CommandBuilder::new()
                 ->setName('duck')
                 ->setDescription('Quack')
-                ->setType(ApplicationCommandTypes::CHAT_INPUT),
+                ->setType(ApplicationCommandTypes::CHAT_INPUT)
+                ->addOption(
+                    CommandOptionBuilder::new()
+                        ->setType(ApplicationCommandOptionTypes::STRING)
+                        ->setName('says')
+                        ->setDescription('Duck can talk too now')
+                ),
             function (FiredCommand $command) {
                 $command->createInteractionResponse(
                     InteractionCallbackBuilder::new()
@@ -96,6 +100,10 @@ class StabilityBot
                 )->then(static function () {
                     return Duck::fetch();
                 })->then(static function (Duck $duck) use ($command) {
+                    if ($command->hasOption('says')) {
+                        $duck->says($command->getOption('says')->value);
+                    }
+
                     $command->editInteractionResponse(
                         $duck->toWebhook()
                     );

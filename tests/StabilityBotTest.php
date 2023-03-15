@@ -4,20 +4,16 @@ declare(strict_types=1);
 
 namespace Tests\Ragnarok\Lyngvi;
 
-use Exan\Fenrir\CommandHandler;
-use Exan\Fenrir\Discord;
 use Exan\Fenrir\Rest\Helpers\Command\CommandBuilder;
-use Mockery;
-use Mockery\Adapter\Phpunit\MockeryTestCase;
+use Fakes\Exan\Fenrir\DiscordFake;
+use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
 use Ragnarok\Lyngvi\StabilityBot;
 
-class StabilityBotTest extends MockeryTestCase
+class StabilityBotTest extends TestCase
 {
     public function testItRegistersCommands()
     {
-        $discordMock = Mockery::mock(Discord::class);
-
         $stabilityBot = new StabilityBot(
             '::token::',
             new NullLogger(),
@@ -25,42 +21,18 @@ class StabilityBotTest extends MockeryTestCase
             '::dev guild id::'
         );
 
-        $stabilityBot->discord = $discordMock;
-        $stabilityBot->discord->command = Mockery::mock(CommandHandler::class);
-
-        $stabilityBot->discord->command->shouldReceive('registerCommand')->with(
-            Mockery::on(function ($commandBuilder) {
-                if (!$commandBuilder instanceof CommandBuilder) {
-                    return false;
-                }
-
-                return $commandBuilder->get()['name'] === 'status';
-            }),
-            Mockery::on(fn ($v) => true)
-        )->once();
-
-        $stabilityBot->discord->command->shouldReceive('registerCommand')->with(
-            Mockery::on(function ($commandBuilder) {
-                if (!$commandBuilder instanceof CommandBuilder) {
-                    return false;
-                }
-
-                return $commandBuilder->get()['name'] === 'cat';
-            }),
-            Mockery::on(fn ($v) => true)
-        )->once();
-
-        $stabilityBot->discord->command->shouldReceive('registerCommand')->with(
-            Mockery::on(function ($commandBuilder) {
-                if (!$commandBuilder instanceof CommandBuilder) {
-                    return false;
-                }
-
-                return $commandBuilder->get()['name'] === 'duck';
-            }),
-            Mockery::on(fn ($v) => true)
-        )->once();
+        $discordFake = DiscordFake::get();
+        $stabilityBot->discord = $discordFake;
 
         $stabilityBot->register();
+
+        $stabilityBot->discord->command
+            ->assertHasDynamicCommand(fn (CommandBuilder $command) => $command->getName() === 'status');
+
+        $stabilityBot->discord->command
+            ->assertHasDynamicCommand(fn (CommandBuilder $command) => $command->getName() === 'cat');
+
+        $stabilityBot->discord->command
+            ->assertHasDynamicCommand(fn (CommandBuilder $command) => $command->getName() === 'duck');
     }
 }

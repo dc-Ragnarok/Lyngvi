@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04da81fac1c75993e42306b2bf708b32",
+    "content-hash": "513e04f38c37c6ce6aaf7c99e97f09a3",
     "packages": [
         {
             "name": "brick/math",
@@ -167,16 +167,16 @@
         },
         {
             "name": "exan/fenrir",
-            "version": "0.5.1",
+            "version": "0.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dc-Ragnarok/Fenrir.git",
-                "reference": "830dfc7919461bbb1cb343224204cad9c959ea32"
+                "reference": "8c3405227e76c518cd64d78d210a93f24a1b7230"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/830dfc7919461bbb1cb343224204cad9c959ea32",
-                "reference": "830dfc7919461bbb1cb343224204cad9c959ea32",
+                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/8c3405227e76c518cd64d78d210a93f24a1b7230",
+                "reference": "8c3405227e76c518cd64d78d210a93f24a1b7230",
                 "shasum": ""
             },
             "require": {
@@ -203,6 +203,7 @@
             "autoload": {
                 "psr-4": {
                     "Exan\\Fenrir\\": "src/",
+                    "Fakes\\Exan\\Fenrir\\": "fakes/",
                     "Tests\\Exan\\Fenrir\\": "tests/"
                 }
             },
@@ -213,9 +214,9 @@
             "description": "Discord API & WS wrapper",
             "support": {
                 "issues": "https://github.com/dc-Ragnarok/Fenrir/issues",
-                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/0.5.1"
+                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/0.5.3"
             },
-            "time": "2023-03-14T18:40:23+00:00"
+            "time": "2023-03-15T21:11:11+00:00"
         },
         {
             "name": "fig/http-message-util",

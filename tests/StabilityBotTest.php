@@ -21,18 +21,20 @@ class StabilityBotTest extends TestCase
             '::dev guild id::'
         );
 
-        $discordFake = DiscordFake::get();
-        $stabilityBot->discord = $discordFake;
+        $stabilityBot->discord = DiscordFake::get();
 
         $stabilityBot->register();
 
-        $stabilityBot->discord->command
+        /** @var CommandBuilderFake */
+        $commandHandler = $stabilityBot->discord->command;
+
+        $commandHandler
             ->assertHasDynamicCommand(fn (CommandBuilder $command) => $command->getName() === 'status');
 
-        $stabilityBot->discord->command
+        $commandHandler
             ->assertHasDynamicCommand(fn (CommandBuilder $command) => $command->getName() === 'cat');
 
-        $stabilityBot->discord->command
+        $commandHandler
             ->assertHasDynamicCommand(fn (CommandBuilder $command) => $command->getName() === 'duck');
     }
 }

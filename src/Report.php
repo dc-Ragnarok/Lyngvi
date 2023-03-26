@@ -7,8 +7,8 @@ namespace Ragnarok\Lyngvi;
 use ByteUnits\Metric;
 use Carbon\Carbon;
 use DateInterval;
-use Exan\Fenrir\Command\Helpers\InteractionCallbackBuilder;
 use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
+use Exan\Fenrir\Interaction\Helpers\InteractionCallbackBuilder;
 use Exan\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
 
 class Report

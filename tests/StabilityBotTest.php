@@ -26,7 +26,7 @@ class StabilityBotTest extends TestCase
         $stabilityBot->register();
 
         /** @var CommandBuilderFake */
-        $commandHandler = $stabilityBot->discord->command;
+        $commandHandler = $stabilityBot->discord->interaction;
 
         $commandHandler
             ->assertHasDynamicCommand(fn (CommandBuilder $command) => $command->getName() === 'status');

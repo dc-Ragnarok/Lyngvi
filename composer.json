@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "exan/fenrir": "0.5.3",
+        "exan/fenrir": "0.5.6",
         "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",

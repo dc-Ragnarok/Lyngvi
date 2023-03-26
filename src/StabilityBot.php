@@ -5,11 +5,12 @@ namespace Ragnarok\Lyngvi;
 use Carbon\Carbon;
 use Exan\Fenrir\Bitwise\Bitwise;
 use Exan\Fenrir\Command\FiredCommand;
-use Exan\Fenrir\Command\Helpers\InteractionCallbackBuilder;
 use Exan\Fenrir\Discord;
 use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
 use Exan\Fenrir\Enums\Parts\ApplicationCommandOptionTypes;
 use Exan\Fenrir\Enums\Parts\ApplicationCommandTypes;
+use Exan\Fenrir\Interaction\CommandInteraction;
+use Exan\Fenrir\Interaction\Helpers\InteractionCallbackBuilder;
 use Exan\Fenrir\Rest\Helpers\Command\CommandBuilder;
 use Exan\Fenrir\Rest\Helpers\Command\CommandOptionBuilder;
 use Psr\Log\LoggerInterface;
@@ -31,19 +32,19 @@ class StabilityBot
         ))
             ->withGateway(new Bitwise())
             ->withRest()
-            ->withCommandHandler($this->devGuild);
+            ->withInteractionHandler($this->devGuild);
 
         $this->startTime = new Carbon();
     }
 
     public function register()
     {
-        $this->discord->command->registerCommand(
+        $this->discord->interaction->registerCommand(
             CommandBuilder::new()
                 ->setName('status')
                 ->setDescription('Generate a status report')
                 ->setType(ApplicationCommandTypes::CHAT_INPUT),
-            function (FiredCommand $command) {
+            function (CommandInteraction $command) {
                 $report = new Report(
                     $this->libraryVersion,
                     $this->startTime
@@ -53,7 +54,7 @@ class StabilityBot
             }
         );
 
-        $this->discord->command->registerCommand(
+        $this->discord->interaction->registerCommand(
             CommandBuilder::new()
                 ->setName('cat')
                 ->setDescription('Cat')
@@ -64,7 +65,7 @@ class StabilityBot
                         ->setName('says')
                         ->setDescription('hell do I know')
                 ),
-            function (FiredCommand $command) {
+            function (CommandInteraction $command) {
                 $command->createInteractionResponse(
                     InteractionCallbackBuilder::new()
                         ->setType(InteractionCallbackTypes::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)
@@ -82,7 +83,7 @@ class StabilityBot
             }
         );
 
-        $this->discord->command->registerCommand(
+        $this->discord->interaction->registerCommand(
             CommandBuilder::new()
                 ->setName('duck')
                 ->setDescription('Quack')
@@ -93,7 +94,7 @@ class StabilityBot
                         ->setName('says')
                         ->setDescription('Duck can talk too now')
                 ),
-            function (FiredCommand $command) {
+            function (CommandInteraction $command) {
                 $command->createInteractionResponse(
                     InteractionCallbackBuilder::new()
                         ->setType(InteractionCallbackTypes::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)

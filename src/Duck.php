@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Ragnarok\Lyngvi;
 
-use Exan\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
-use Exan\Fenrir\Rest\Helpers\Webhook\EditWebhookBuilder;
-use Exan\Fenrir\Rest\Helpers\Webhook\WebhookBuilder;
+use Ragnarok\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
+use Ragnarok\Fenrir\Rest\Helpers\Webhook\EditWebhookBuilder;
+use Ragnarok\Fenrir\Rest\Helpers\Webhook\WebhookBuilder;
 use Psr\Http\Message\ResponseInterface;
 use React\EventLoop\LoopInterface;
 use React\Http\Browser;

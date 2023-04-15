@@ -3,16 +3,15 @@
 namespace Ragnarok\Lyngvi;
 
 use Carbon\Carbon;
-use Exan\Fenrir\Bitwise\Bitwise;
-use Exan\Fenrir\Command\FiredCommand;
-use Exan\Fenrir\Discord;
-use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
-use Exan\Fenrir\Enums\Parts\ApplicationCommandOptionTypes;
-use Exan\Fenrir\Enums\Parts\ApplicationCommandTypes;
-use Exan\Fenrir\Interaction\CommandInteraction;
-use Exan\Fenrir\Interaction\Helpers\InteractionCallbackBuilder;
-use Exan\Fenrir\Rest\Helpers\Command\CommandBuilder;
-use Exan\Fenrir\Rest\Helpers\Command\CommandOptionBuilder;
+use Ragnarok\Fenrir\Bitwise\Bitwise;
+use Ragnarok\Fenrir\Discord;
+use Ragnarok\Fenrir\Enums\Command\InteractionCallbackTypes;
+use Ragnarok\Fenrir\Enums\Parts\ApplicationCommandOptionTypes;
+use Ragnarok\Fenrir\Enums\Parts\ApplicationCommandTypes;
+use Ragnarok\Fenrir\Interaction\CommandInteraction;
+use Ragnarok\Fenrir\Interaction\Helpers\InteractionCallbackBuilder;
+use Ragnarok\Fenrir\Rest\Helpers\Command\CommandBuilder;
+use Ragnarok\Fenrir\Rest\Helpers\Command\CommandOptionBuilder;
 use Psr\Log\LoggerInterface;
 
 class StabilityBot

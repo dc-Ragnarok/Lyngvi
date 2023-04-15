@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Ragnarok\Lyngvi;
 
-use Exan\Fenrir\Rest\Helpers\Command\CommandBuilder;
-use Fakes\Exan\Fenrir\DiscordFake;
+use Ragnarok\Fenrir\Rest\Helpers\Command\CommandBuilder;
+use Fakes\Ragnarok\Fenrir\DiscordFake;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
 use Ragnarok\Lyngvi\StabilityBot;

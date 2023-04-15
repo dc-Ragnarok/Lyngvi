@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "exan/fenrir": "0.5.6",
+        "exan/fenrir": "dev-chore/refactor-gateway@dev",
         "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",

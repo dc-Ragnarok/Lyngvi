@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Ragnarok\Lyngvi;
 
 use DateInterval;
-use Exan\Fenrir\Enums\Command\InteractionCallbackTypes;
+use Ragnarok\Fenrir\Enums\Command\InteractionCallbackTypes;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Ragnarok\Lyngvi\Report;

@@ -39,4 +39,4 @@ $bot = new StabilityBot(
 
 $bot->register();
 
-$bot->discord->gateway->connect();
+$bot->discord->gateway->open();

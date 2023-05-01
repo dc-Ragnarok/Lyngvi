@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 COPY ./src /usr/src/fenrir-stability/src
 COPY ./index.php /usr/src/fenrir-stability
-COPY ./.env /usr/src/fenrir-stability
+COPY ./.en[v] /usr/src/fenrir-stability
 COPY ./composer.* /usr/src/fenrir-stability/
 
 WORKDIR /usr/src/fenrir-stability

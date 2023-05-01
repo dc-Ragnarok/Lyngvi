@@ -3,9 +3,7 @@ FROM ubuntu:22.10
 ARG DEBIAN_FRONTEND=noninteractive
 
 COPY ./src /usr/src/fenrir-stability/src
-COPY ./index.php /usr/src/fenrir-stability
-COPY ./.en[v] /usr/src/fenrir-stability
-COPY ./composer.* /usr/src/fenrir-stability/
+COPY ./index.php ./.en[v] ./composer.* /usr/src/fenrir-stability/
 
 WORKDIR /usr/src/fenrir-stability
 

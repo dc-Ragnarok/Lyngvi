@@ -1,4 +1,4 @@
-FROM ubuntu:22.10
+FROM ubuntu:23.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -8,7 +8,7 @@ COPY ./index.php ./.en[v] ./composer.* /usr/src/fenrir-stability/
 WORKDIR /usr/src/fenrir-stability
 
 RUN apt-get update
-RUN apt-get install php-cli php-xml php-dompdf composer php-bcmath -y
+RUN apt-get install php-cli php-xml composer php-bcmath -y
 RUN composer install
 RUN composer dump-autoload -o
 

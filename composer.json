@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "exan/fenrir": "0.6.1",
+        "exan/fenrir": "dev-chore/eventer-gateway",
         "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",

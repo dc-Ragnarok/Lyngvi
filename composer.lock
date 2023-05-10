@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "025bb8ab5914bc3078c775987f43b64b",
+    "content-hash": "2356194052a107383d6cf9398522e364",
     "packages": [
         {
             "name": "brick/math",
@@ -63,7 +63,7 @@
         },
         {
             "name": "discord-php/http",
-            "version": "dev-master",
+            "version": "v10.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/discord-php/DiscordPHP-Http.git",
@@ -92,7 +92,6 @@
             "suggest": {
                 "guzzlehttp/guzzle": "For alternative to ReactPHP/Http Browser"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -165,22 +164,67 @@
             "time": "2017-07-23T21:35:13+00:00"
         },
         {
-            "name": "exan/fenrir",
-            "version": "0.6.1",
+            "name": "exan/eventer",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dc-Ragnarok/Fenrir.git",
-                "reference": "aab03eeaf6dab69731c5bf1c1890ea24ac72edb3"
+                "url": "https://github.com/Exanlv/eventer.git",
+                "reference": "ee8e8c6ddf39fa645de422c90e5c1f6f5ee21954"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/aab03eeaf6dab69731c5bf1c1890ea24ac72edb3",
-                "reference": "aab03eeaf6dab69731c5bf1c1890ea24ac72edb3",
+                "url": "https://api.github.com/repos/Exanlv/eventer/zipball/ee8e8c6ddf39fa645de422c90e5c1f6f5ee21954",
+                "reference": "ee8e8c6ddf39fa645de422c90e5c1f6f5ee21954",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpmd/phpmd": "^2.13",
+                "phpunit/phpunit": "^10.1",
+                "squizlabs/php_codesniffer": "^3.7",
+                "symfony/var-dumper": "^6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Exan\\Eventer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Exanlv",
+                    "email": "exan@landviz.nl"
+                }
+            ],
+            "description": "Event emitting library",
+            "support": {
+                "issues": "https://github.com/Exanlv/eventer/issues",
+                "source": "https://github.com/Exanlv/eventer/tree/1.0.2"
+            },
+            "time": "2023-05-08T19:39:51+00:00"
+        },
+        {
+            "name": "exan/fenrir",
+            "version": "dev-chore/eventer-gateway",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dc-Ragnarok/Fenrir.git",
+                "reference": "dab24020540646241392111d59d94820a6c75524"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/dab24020540646241392111d59d94820a6c75524",
+                "reference": "dab24020540646241392111d59d94820a6c75524",
                 "shasum": ""
             },
             "require": {
-                "discord-php/http": "master@dev",
+                "discord-php/http": "v10.2.0",
                 "evenement/evenement": "^3.0.0",
+                "exan/eventer": "^1.0.2",
+                "exan/reactphp-retrier": "^1.0",
                 "guzzlehttp/guzzle": "^7.0",
                 "monolog/monolog": "^3.2",
                 "nesbot/carbon": "^2.64",
@@ -198,7 +242,8 @@
                 "phpmd/phpmd": "^2.13",
                 "phpunit/phpunit": "^9.5",
                 "seregazhuk/react-promise-testing": "^0.6.1",
-                "squizlabs/php_codesniffer": "^3.7"
+                "squizlabs/php_codesniffer": "^3.7",
+                "symfony/var-dumper": "^6.2"
             },
             "type": "library",
             "autoload": {
@@ -215,9 +260,56 @@
             "description": "Discord API & WS wrapper",
             "support": {
                 "issues": "https://github.com/dc-Ragnarok/Fenrir/issues",
-                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/0.6.1"
+                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/chore/eventer-gateway"
             },
-            "time": "2023-05-01T17:50:05+00:00"
+            "time": "2023-05-09T20:15:33+00:00"
+        },
+        {
+            "name": "exan/reactphp-retrier",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Exanlv/reactphp-retrier.git",
+                "reference": "04402ac11d47ae45114f7bb9fc224d98d826c67c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Exanlv/reactphp-retrier/zipball/04402ac11d47ae45114f7bb9fc224d98d826c67c",
+                "reference": "04402ac11d47ae45114f7bb9fc224d98d826c67c",
+                "shasum": ""
+            },
+            "require": {
+                "react/promise": "^2.10.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phpmd/phpmd": "^2.13",
+                "phpunit/phpunit": "^9.5",
+                "react/async": "^4.0",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Exan\\Retrier\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Exanlv",
+                    "email": "exan@landviz.nl"
+                }
+            ],
+            "description": "Simple way to retry reactPHP promises several times",
+            "support": {
+                "issues": "https://github.com/Exanlv/reactphp-retrier/issues",
+                "source": "https://github.com/Exanlv/reactphp-retrier/tree/1.0.0"
+            },
+            "time": "2023-05-02T19:14:45+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -1871,33 +1963,31 @@
         },
         {
             "name": "react/event-loop",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/event-loop.git",
-                "reference": "187fb56f46d424afb6ec4ad089269c72eec2e137"
+                "reference": "6e7e587714fff7a83dcc7025aee42ab3b265ae05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/187fb56f46d424afb6ec4ad089269c72eec2e137",
-                "reference": "187fb56f46d424afb6ec4ad089269c72eec2e137",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/6e7e587714fff7a83dcc7025aee42ab3b265ae05",
+                "reference": "6e7e587714fff7a83dcc7025aee42ab3b265ae05",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.35"
+                "phpunit/phpunit": "^9.6 || ^5.7 || ^4.8.36"
             },
             "suggest": {
-                "ext-event": "~1.0 for ExtEventLoop",
-                "ext-pcntl": "For signal handling support when using the StreamSelectLoop",
-                "ext-uv": "* for ExtUvLoop"
+                "ext-pcntl": "For signal handling support when using the StreamSelectLoop"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "React\\EventLoop\\": "src"
+                    "React\\EventLoop\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1933,19 +2023,15 @@
             ],
             "support": {
                 "issues": "https://github.com/reactphp/event-loop/issues",
-                "source": "https://github.com/reactphp/event-loop/tree/v1.3.0"
+                "source": "https://github.com/reactphp/event-loop/tree/v1.4.0"
             },
             "funding": [
                 {
-                    "url": "https://github.com/WyriHaximus",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/clue",
-                    "type": "github"
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
                 }
             ],
-            "time": "2022-03-17T11:10:22+00:00"
+            "time": "2023-05-05T10:11:24+00:00"
         },
         {
             "name": "react/http",
@@ -2041,23 +2127,23 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.9.0",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910"
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/234f8fd1023c9158e2314fa9d7d0e6a83db42910",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.36"
+                "phpunit/phpunit": "^9.5 || ^5.7 || ^4.8.36"
             },
             "type": "library",
             "autoload": {
@@ -2101,19 +2187,15 @@
             ],
             "support": {
                 "issues": "https://github.com/reactphp/promise/issues",
-                "source": "https://github.com/reactphp/promise/tree/v2.9.0"
+                "source": "https://github.com/reactphp/promise/tree/v2.10.0"
             },
             "funding": [
                 {
-                    "url": "https://github.com/WyriHaximus",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/clue",
-                    "type": "github"
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
                 }
             ],
-            "time": "2022-02-11T10:27:51+00:00"
+            "time": "2023-05-02T15:15:43+00:00"
         },
         {
             "name": "react/promise-timer",
@@ -3497,16 +3579,16 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "fd9329ab3368f59fe1fe808a189c51086bd4b6bd"
+                "reference": "5647d65443818959172645e7ed999217360654b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/fd9329ab3368f59fe1fe808a189c51086bd4b6bd",
-                "reference": "fd9329ab3368f59fe1fe808a189c51086bd4b6bd",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/5647d65443818959172645e7ed999217360654b6",
+                "reference": "5647d65443818959172645e7ed999217360654b6",
                 "shasum": ""
             },
             "require": {
@@ -3545,7 +3627,8 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-file-iterator/issues",
-                "source": "https://github.com/sebastianbergmann/php-file-iterator/tree/4.0.1"
+                "security": "https://github.com/sebastianbergmann/php-file-iterator/security/policy",
+                "source": "https://github.com/sebastianbergmann/php-file-iterator/tree/4.0.2"
             },
             "funding": [
                 {
@@ -3553,7 +3636,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-10T16:53:14+00:00"
+            "time": "2023-05-07T09:13:23+00:00"
         },
         {
             "name": "phpunit/php-invoker",
@@ -4858,6 +4941,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "exan/fenrir": 20,
         "discord-php/http": 20
     },
     "prefer-stable": false,

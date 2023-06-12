@@ -14,15 +14,13 @@ use Ragnarok\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
 class Report
 {
     private int $memory;
-    private DateInterval $uptime;
     private string $phpVersion;
 
     public function __construct(
         private readonly string $libraryVersion,
-        Carbon $startTime,
+        private readonly Carbon $startTime,
     ) {
         $this->memory = memory_get_usage();
-        $this->uptime = (new Carbon())->diff($startTime);
         $this->phpVersion = phpversion();
     }
 
@@ -47,7 +45,7 @@ class Report
         return [
             'Fenrir version' => $this->libraryVersion,
             'PHP version' => $this->phpVersion,
-            'Uptime' => $this->uptime->format('%d days, %H:%I:%S'),
+            'Uptime' => $this->startTime->longRelativeToNowDiffForHumans(parts: 3),
             'Memory usage' => Metric::bytes($this->memory)->format(),
         ];
     }

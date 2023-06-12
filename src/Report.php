@@ -45,7 +45,7 @@ class Report
         return [
             'Fenrir version' => $this->libraryVersion,
             'PHP version' => $this->phpVersion,
-            'Uptime' => $this->startTime->longRelativeToNowDiffForHumans(parts: 3),
+            'Start time' => $this->startTime->longRelativeToNowDiffForHumans(parts: 3),
             'Memory usage' => Metric::bytes($this->memory)->format(),
         ];
     }

@@ -6,8 +6,7 @@ namespace Ragnarok\Lyngvi;
 
 use ByteUnits\Metric;
 use Carbon\Carbon;
-use DateInterval;
-use Ragnarok\Fenrir\Enums\Command\InteractionCallbackTypes;
+use Ragnarok\Fenrir\Enums\InteractionCallbackType;
 use Ragnarok\Fenrir\Interaction\Helpers\InteractionCallbackBuilder;
 use Ragnarok\Fenrir\Rest\Helpers\Channel\EmbedBuilder;
 
@@ -34,7 +33,7 @@ class Report
 
         return InteractionCallbackBuilder::new()
             ->addEmbed($embed)
-            ->setType(InteractionCallbackTypes::CHANNEL_MESSAGE_WITH_SOURCE);
+            ->setType(InteractionCallbackType::CHANNEL_MESSAGE_WITH_SOURCE);
     }
 
     /**

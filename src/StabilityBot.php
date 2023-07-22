@@ -5,17 +5,19 @@ namespace Ragnarok\Lyngvi;
 use Carbon\Carbon;
 use Ragnarok\Fenrir\Bitwise\Bitwise;
 use Ragnarok\Fenrir\Discord;
-use Ragnarok\Fenrir\Enums\Command\InteractionCallbackTypes;
-use Ragnarok\Fenrir\Enums\Parts\ApplicationCommandOptionTypes;
-use Ragnarok\Fenrir\Enums\Parts\ApplicationCommandTypes;
 use Ragnarok\Fenrir\Interaction\CommandInteraction;
 use Ragnarok\Fenrir\Interaction\Helpers\InteractionCallbackBuilder;
 use Ragnarok\Fenrir\Rest\Helpers\Command\CommandBuilder;
 use Ragnarok\Fenrir\Rest\Helpers\Command\CommandOptionBuilder;
 use Psr\Log\LoggerInterface;
+use Ragnarok\Fenrir\Enums\ApplicationCommandOptionType;
+use Ragnarok\Fenrir\Enums\ApplicationCommandTypes;
+use Ragnarok\Fenrir\Enums\InteractionCallbackType;
+use Ragnarok\Fenrir\InteractionHandler;
 
 class StabilityBot
 {
+    public InteractionHandler $interactionHandler;
     public Discord $discord;
     private Carbon $startTime;
 
@@ -25,20 +27,23 @@ class StabilityBot
         private string $libraryVersion,
         private ?string $devGuild = null
     ) {
+        $this->interactionHandler = new InteractionHandler($this->devGuild);
+
         $this->discord = (new Discord(
             $token,
             $logger
         ))
             ->withGateway(new Bitwise())
-            ->withRest()
-            ->withInteractionHandler($this->devGuild);
+            ->withRest();
+
+        $this->discord->registerExtension($this->interactionHandler);
 
         $this->startTime = new Carbon();
     }
 
     public function register()
     {
-        $this->discord->interaction->registerCommand(
+        $this->interactionHandler->registerCommand(
             CommandBuilder::new()
                 ->setName('status')
                 ->setDescription('Generate a status report')
@@ -53,21 +58,21 @@ class StabilityBot
             }
         );
 
-        $this->discord->interaction->registerCommand(
+        $this->interactionHandler->registerCommand(
             CommandBuilder::new()
                 ->setName('cat')
                 ->setDescription('Cat')
                 ->setType(ApplicationCommandTypes::CHAT_INPUT)
                 ->addOption(
                     CommandOptionBuilder::new()
-                        ->setType(ApplicationCommandOptionTypes::STRING)
+                        ->setType(ApplicationCommandOptionType::STRING)
                         ->setName('says')
                         ->setDescription('hell do I know')
                 ),
             function (CommandInteraction $command) {
                 $command->createInteractionResponse(
                     InteractionCallbackBuilder::new()
-                        ->setType(InteractionCallbackTypes::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)
+                        ->setType(InteractionCallbackType::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)
                 )->then(static function () {
                     return Cat::fetch();
                 })->then(static function (Cat $cat) use ($command) {
@@ -82,21 +87,21 @@ class StabilityBot
             }
         );
 
-        $this->discord->interaction->registerCommand(
+        $this->interactionHandler->registerCommand(
             CommandBuilder::new()
                 ->setName('duck')
                 ->setDescription('Quack')
                 ->setType(ApplicationCommandTypes::CHAT_INPUT)
                 ->addOption(
                     CommandOptionBuilder::new()
-                        ->setType(ApplicationCommandOptionTypes::STRING)
+                        ->setType(ApplicationCommandOptionType::STRING)
                         ->setName('says')
                         ->setDescription('Duck can talk too now')
                 ),
             function (CommandInteraction $command) {
                 $command->createInteractionResponse(
                     InteractionCallbackBuilder::new()
-                        ->setType(InteractionCallbackTypes::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)
+                        ->setType(InteractionCallbackType::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)
                 )->then(static function () {
                     return Duck::fetch();
                 })->then(static function (Duck $duck) use ($command) {

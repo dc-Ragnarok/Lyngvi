@@ -47,7 +47,7 @@ class Report
             'PHP version' => $this->phpVersion,
             'Start time' => $this->startTime->longRelativeToNowDiffForHumans(parts: 3),
             'Memory usage' => Metric::bytes($this->memory)->format(),
-            'Debug info' => '```' . PHP_EOL . json_encode($this->debugInfo, JSON_PRETTY_PRINT) . PHP_EOL . '```'
+            'Debug info' => '```js' . PHP_EOL . json_encode($this->debugInfo, JSON_PRETTY_PRINT) . PHP_EOL . '```'
         ];
     }
 }

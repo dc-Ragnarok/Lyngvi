@@ -51,7 +51,8 @@ class StabilityBot
             function (CommandInteraction $command) {
                 $report = new Report(
                     $this->libraryVersion,
-                    $this->startTime
+                    $this->startTime,
+                    $this->discord->getDebugInfo()
                 );
 
                 $command->createInteractionResponse($report->toInteractionCallback());

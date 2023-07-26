@@ -18,6 +18,7 @@ class Report
     public function __construct(
         private readonly string $libraryVersion,
         private readonly Carbon $startTime,
+        private readonly array $debugInfo,
     ) {
         $this->memory = memory_get_usage();
         $this->phpVersion = phpversion();
@@ -46,6 +47,7 @@ class Report
             'PHP version' => $this->phpVersion,
             'Start time' => $this->startTime->longRelativeToNowDiffForHumans(parts: 3),
             'Memory usage' => Metric::bytes($this->memory)->format(),
+            'Debug info' => '```' . PHP_EOL . json_encode($this->debugInfo, JSON_PRETTY_PRINT) . PHP_EOL . '```'
         ];
     }
 }

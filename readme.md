@@ -12,7 +12,7 @@ cp .env.example .env
 
 Add required variables
 
-Run locally with `php index.php` or use Docker:
+Run locally with `php _index.php` or use Docker:
 ```
 composer build;
 

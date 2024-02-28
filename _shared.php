@@ -1,9 +1,6 @@
 <?php
 
 use Dotenv\Dotenv;
-use Ragnarok\Lyngvi\StabilityBot;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 
 require_once './vendor/autoload.php';
 
@@ -23,20 +20,3 @@ function env(string $key, mixed $default = null) {
 
     return $var === false ? $default : $var;
 }
-
-$token = env('TOKEN');
-$devGuild = env('DEV_GUILD');
-
-$log = new Logger('stability-bot');
-$log->pushHandler(new StreamHandler('php://stdout'));
-
-$bot = new StabilityBot(
-    $token,
-    $log,
-    $fenrirVersion,
-    $devGuild
-);
-
-$bot->register();
-
-$bot->discord->gateway->open();

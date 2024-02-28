@@ -23,7 +23,7 @@ class StabilityBotTest extends TestCase
 
         $stabilityBot->discord = DiscordFake::get();
 
-        $stabilityBot->register();
+        $stabilityBot->registerCommandListeners();
 
         /** @var CommandBuilderFake */
         $commandHandler = $stabilityBot->discord->interaction;

@@ -7,17 +7,15 @@ use Ragnarok\Fenrir\Bitwise\Bitwise;
 use Ragnarok\Fenrir\Discord;
 use Ragnarok\Fenrir\Interaction\CommandInteraction;
 use Ragnarok\Fenrir\Interaction\Helpers\InteractionCallbackBuilder;
-use Ragnarok\Fenrir\Rest\Helpers\Command\CommandBuilder;
-use Ragnarok\Fenrir\Rest\Helpers\Command\CommandOptionBuilder;
 use Psr\Log\LoggerInterface;
-use Ragnarok\Fenrir\Enums\ApplicationCommandOptionType;
-use Ragnarok\Fenrir\Enums\ApplicationCommandTypes;
+use Ragnarok\Fenrir\Command\CommandExtension;
+use Ragnarok\Fenrir\Command\GlobalCommandExtension;
+use Ragnarok\Fenrir\Constants\Events;
 use Ragnarok\Fenrir\Enums\InteractionCallbackType;
-use Ragnarok\Fenrir\InteractionHandler;
+use Ragnarok\Fenrir\Gateway\Events\Ready;
 
 class StabilityBot
 {
-    public InteractionHandler $interactionHandler;
     public Discord $discord;
     private Carbon $startTime;
 
@@ -27,8 +25,6 @@ class StabilityBot
         private string $libraryVersion,
         private ?string $devGuild = null
     ) {
-        $this->interactionHandler = new InteractionHandler($this->devGuild);
-
         $this->discord = (new Discord(
             $token,
             $logger
@@ -36,18 +32,21 @@ class StabilityBot
             ->withGateway(new Bitwise())
             ->withRest();
 
-        $this->discord->registerExtension($this->interactionHandler);
+        $this->discord->gateway->events->once(Events::READY, function (Ready $ready) {
+            $commandExtension = new GlobalCommandExtension($ready->application->id);
+
+            $this->discord->registerExtension($commandExtension);
+
+            $this->registerCommandListeners($commandExtension);
+        });
 
         $this->startTime = new Carbon();
     }
 
-    public function register()
+    private function registerCommandListeners(CommandExtension $commandExtension)
     {
-        $this->interactionHandler->registerCommand(
-            CommandBuilder::new()
-                ->setName('status')
-                ->setDescription('Generate a status report')
-                ->setType(ApplicationCommandTypes::CHAT_INPUT),
+        $commandExtension->on(
+            'status',
             function (CommandInteraction $command) {
                 $report = new Report(
                     $this->libraryVersion,
@@ -59,17 +58,8 @@ class StabilityBot
             }
         );
 
-        $this->interactionHandler->registerCommand(
-            CommandBuilder::new()
-                ->setName('cat')
-                ->setDescription('Cat')
-                ->setType(ApplicationCommandTypes::CHAT_INPUT)
-                ->addOption(
-                    CommandOptionBuilder::new()
-                        ->setType(ApplicationCommandOptionType::STRING)
-                        ->setName('says')
-                        ->setDescription('hell do I know')
-                ),
+        $commandExtension->on(
+            'cat',
             function (CommandInteraction $command) {
                 $command->createInteractionResponse(
                     InteractionCallbackBuilder::new()
@@ -88,17 +78,8 @@ class StabilityBot
             }
         );
 
-        $this->interactionHandler->registerCommand(
-            CommandBuilder::new()
-                ->setName('duck')
-                ->setDescription('Quack')
-                ->setType(ApplicationCommandTypes::CHAT_INPUT)
-                ->addOption(
-                    CommandOptionBuilder::new()
-                        ->setType(ApplicationCommandOptionType::STRING)
-                        ->setName('says')
-                        ->setDescription('Duck can talk too now')
-                ),
+        $commandExtension->on(
+            'duck',
             function (CommandInteraction $command) {
                 $command->createInteractionResponse(
                     InteractionCallbackBuilder::new()

@@ -9,7 +9,7 @@ WORKDIR /usr/src/fenrir-stability
 
 RUN apt-get update
 RUN apt-get install php-cli php-xml composer php-bcmath -y
-RUN composer install
+RUN composer install --no-dev
 RUN composer dump-autoload -o
 
 RUN php ./_register-commands.php

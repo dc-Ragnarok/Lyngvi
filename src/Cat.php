@@ -31,7 +31,7 @@ class Cat
         return $http->get($url)->then(function (ResponseInterface $response) {
             $body = json_decode((string) $response->getBody());
 
-            return new Cat(self::BASE_URL . $body->url);
+            return new Cat(self::BASE_URL . 'cat/' . $body->_id);
         });
     }
 

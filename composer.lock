@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3532130029ec836666d9c2720026ba3",
+    "content-hash": "953aafe77d640b30d5af9bbd8d9b9b14",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -223,16 +223,16 @@
         },
         {
             "name": "exan/fenrir",
-            "version": "dev-feature/79",
+            "version": "dev-feature/79-1006-handling",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dc-Ragnarok/Fenrir.git",
-                "reference": "f89a04861c2717e0d2af293f410f341c9856edd9"
+                "reference": "cdd843ea56efc325bf54cfaf719b2ba5ab7420e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/f89a04861c2717e0d2af293f410f341c9856edd9",
-                "reference": "f89a04861c2717e0d2af293f410f341c9856edd9",
+                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/cdd843ea56efc325bf54cfaf719b2ba5ab7420e2",
+                "reference": "cdd843ea56efc325bf54cfaf719b2ba5ab7420e2",
                 "shasum": ""
             },
             "require": {
@@ -270,9 +270,9 @@
             "description": "Discord API & WS wrapper",
             "support": {
                 "issues": "https://github.com/dc-Ragnarok/Fenrir/issues",
-                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/feature/79"
+                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/feature/79-1006-handling"
             },
-            "time": "2024-04-23T13:26:42+00:00"
+            "time": "2024-04-24T17:58:56+00:00"
         },
         {
             "name": "exan/reactphp-retrier",
@@ -4516,5 +4516,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

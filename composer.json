@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "exan/fenrir": "dev-feature/79@dev",
+        "exan/fenrir": "dev-feature/79-1006-handling@dev",
         "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",

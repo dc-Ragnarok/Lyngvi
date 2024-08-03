@@ -5,8 +5,13 @@
             "Ragnarok\\Lyngvi\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Ragnarok\\Lyngvi\\": "tests/"
+        }
+    },
     "require": {
-        "exan/fenrir": "dev-feature/79-1006-handling@dev",
+        "exan/fenrir": "0.13.1",
         "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",

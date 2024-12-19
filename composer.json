@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "exan/fenrir": "dev-feature/79-1006-handling@dev",
+        "exan/fenrir": "dev-promise-v3-updated@dev",
         "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Ragnarok\Lyngvi;
 
-use ByteUnits\Metric;
 use Carbon\Carbon;
 use Ragnarok\Fenrir\Enums\InteractionCallbackType;
 use Ragnarok\Fenrir\Interaction\Helpers\InteractionCallbackBuilder;

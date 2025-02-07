@@ -10,7 +10,6 @@
         "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",
-        "gabrielelana/byte-units": "^0.3.0",
         "nesbot/carbon": "^2.66"
     },
     "require-dev": {

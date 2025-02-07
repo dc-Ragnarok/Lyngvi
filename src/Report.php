@@ -46,7 +46,7 @@ class Report
             'Fenrir version' => $this->libraryVersion,
             'PHP version' => $this->phpVersion,
             'Start time' => $this->startTime->longRelativeToNowDiffForHumans(parts: 3),
-            'Memory usage' => Metric::bytes($this->memory)->format(),
+            'Memory usage' => round($this->memory / 1000000, 2) . ' MB',
             'Debug info' => '```js' . PHP_EOL . json_encode($this->debugInfo, JSON_PRETTY_PRINT) . PHP_EOL . '```'
         ];
     }

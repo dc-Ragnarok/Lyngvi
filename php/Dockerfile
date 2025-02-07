@@ -9,4 +9,4 @@ RUN pecl install ev
 
 RUN wget https://raw.githubusercontent.com/composer/getcomposer.org/f3108f64b4e1c1ce6eb462b159956461592b3e3e/web/installer -O - -q | php -- --quiet
 
-CMD php /lyngvi/_index.php
+CMD php /composer.phar install && php /lyngvi/_index.php

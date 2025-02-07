@@ -14,8 +14,7 @@ deploy:
 	docker-compose down
 	make build
 	docker-compose up -d
-	sleep 5
-	make commands
+	sleep 5; make commands
 
 cs:
 	composer cs

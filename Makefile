@@ -1,9 +1,20 @@
-build:
-	docker build -t fenrir-stability .
+build: ./php/Dockerfile
+	docker compose build lyngvi
 
-build-run:
-	docker rm --force Lyngvi; \
-	docker run --env-file .env --name Lyngvi --restart always -d fenrir-stability
+in:
+	docker-compose exec lyngvi sh
+
+up: build
+	docker-compose up
+
+commands: _register-commands.php
+	docker-compose exec lyngvi php ./_register-commands.php
+
+deploy:
+	docker-compose down
+	make build
+	docker-compose up -d
+	make commands
 
 cs:
 	composer cs

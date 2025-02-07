@@ -1,0 +1,11 @@
+services:
+  lyngvi:
+    build: ./php
+    volumes:
+      - .:/lyngvi
+    working_dir: /lyngvi
+    restart: always
+
+volumes:
+  lyngvi:
+    driver: local

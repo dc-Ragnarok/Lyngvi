@@ -1,5 +1,5 @@
 build: ./php/Dockerfile
-	docker compose build lyngvi
+	docker-compose build lyngvi
 
 in:
 	docker-compose exec lyngvi sh

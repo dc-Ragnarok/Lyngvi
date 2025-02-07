@@ -1,4 +1,4 @@
-build: ./php/Dockerfile
+build: ./php/Dockerfile composer.json composer.lock
 	docker-compose build lyngvi
 
 in:
@@ -14,6 +14,7 @@ deploy:
 	docker-compose down
 	make build
 	docker-compose up -d
+	sleep 5
 	make commands
 
 cs:

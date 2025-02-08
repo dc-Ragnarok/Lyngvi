@@ -6,6 +6,27 @@ services:
     working_dir: /lyngvi
     restart: always
 
+  install:
+    build: ./php
+    volumes:
+      - .:/lyngvi
+    working_dir: /lyngvi
+    command: /composer.phar install
+
+  commands:
+    build: ./php
+    volumes:
+      - .:/lyngvi
+    working_dir: /lyngvi
+    command: php _register-commands.php
+
+  sh:
+    build: ./php
+    volumes:
+      - .:/lyngvi
+    working_dir: /lyngvi
+    command: sh
+
 volumes:
   lyngvi:
     driver: local

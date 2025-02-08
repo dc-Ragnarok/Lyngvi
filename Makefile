@@ -2,28 +2,20 @@ build: ./php/Dockerfile composer.json composer.lock
 	docker-compose build lyngvi
 
 in:
-	docker-compose exec lyngvi sh
+	docker-compose run sh
 
-up: build
-	docker-compose up
+up: build commands
+	docker-compose up lyngvi
+
+detached: build install commands
+	docker-compose up lyngvi -d
 
 commands: _register-commands.php
-	docker-compose exec lyngvi php ./_register-commands.php
+	docker-compose up commands
 
 deploy:
 	docker-compose down
-	make build
-	docker-compose up -d
-	make commands
+	make detached
 
-cs:
-	composer cs
-
-csf:
-	composer csf
-
-test:
-	composer test
-
-test-coverage:
-	composer test-coverage
+install:
+	docker-compose up install

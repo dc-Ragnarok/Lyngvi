@@ -8,7 +8,7 @@ up: build commands
 	docker-compose up lyngvi
 
 detached: build install commands
-	docker-compose up lyngvi -d
+	docker-compose up -d lyngvi
 
 commands: _register-commands.php
 	docker-compose up commands

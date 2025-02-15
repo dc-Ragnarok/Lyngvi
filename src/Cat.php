@@ -9,7 +9,7 @@ use Ragnarok\Fenrir\Rest\Helpers\Webhook\EditWebhookBuilder;
 use Psr\Http\Message\ResponseInterface;
 use React\EventLoop\LoopInterface;
 use React\Http\Browser;
-use React\Promise\ExtendedPromiseInterface;
+use React\Promise\PromiseInterface;
 
 class Cat
 {
@@ -20,9 +20,9 @@ class Cat
     }
 
     /**
-     * @return ExtendedPromiseInterface<\Ragnarok\Lyngvi\Cat>
+     * @return PromiseInterface<\Ragnarok\Lyngvi\Cat>
      */
-    public static function fetch(?LoopInterface $loop = null): ExtendedPromiseInterface
+    public static function fetch(?LoopInterface $loop = null): PromiseInterface
     {
         $url = self::BASE_URL . 'cat?json=true';
 

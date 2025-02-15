@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "exan/fenrir": "dev-chore/pawl-life-support@dev",
+        "exan/fenrir": "dev-feature/http@dev",
         "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",

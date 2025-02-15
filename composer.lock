@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "222a35555a57db3fef4ead63960c733f",
+    "content-hash": "66eb711b040be0d9f7939c9ed0c65827",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -223,40 +223,41 @@
         },
         {
             "name": "exan/fenrir",
-            "version": "dev-chore/pawl-life-support",
+            "version": "dev-feature/http",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dc-Ragnarok/Fenrir.git",
-                "reference": "cb42b3f2b18d568437ac8561b480bf82af037d63"
+                "reference": "aca8036f31640fbdc3efcd43387e30f6f380d470"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/cb42b3f2b18d568437ac8561b480bf82af037d63",
-                "reference": "cb42b3f2b18d568437ac8561b480bf82af037d63",
+                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/aca8036f31640fbdc3efcd43387e30f6f380d470",
+                "reference": "aca8036f31640fbdc3efcd43387e30f6f380d470",
                 "shasum": ""
             },
             "require": {
                 "discord-php/http": "^v10.3.0",
                 "evenement/evenement": "^3.0.0",
                 "exan/eventer": "^1.0.3",
-                "exan/pawl": "0.4.3",
+                "exan/pawl": "^0.4.4",
                 "exan/reactphp-retrier": "^2.0",
                 "freezemage0/array_find": "^1.0",
                 "nesbot/carbon": "^2.64 || ^3.0",
+                "php": "^8.2",
                 "ralouphie/mimey": "^1.0",
                 "react/async": "^4.0.0",
                 "react/event-loop": "^1.3.0",
+                "react/http": "^1.11.0",
                 "react/promise": "^3",
                 "spatie/regex": "^3.1"
             },
             "require-dev": {
-                "cboden/ratchet": "^0.4.4",
                 "friendsofphp/php-cs-fixer": "^3.20",
                 "mockery/mockery": "^1.6",
                 "monolog/monolog": "^3.2",
                 "phpmd/phpmd": "^2.13",
                 "phpunit/phpunit": "^9.5 || ^10.0",
-                "symfony/var-dumper": "^6.2"
+                "symfony/var-dumper": "^6.2 || ^7.0"
             },
             "type": "library",
             "autoload": {
@@ -271,29 +272,29 @@
             "description": "Discord API & WS wrapper",
             "support": {
                 "issues": "https://github.com/dc-Ragnarok/Fenrir/issues",
-                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/chore/pawl-life-support"
+                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/feature/http"
             },
-            "time": "2025-01-30T18:51:48+00:00"
+            "time": "2025-02-15T20:40:12+00:00"
         },
         {
             "name": "exan/pawl",
-            "version": "0.4.3",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Exanlv/pawl-life-support.git",
-                "reference": "3639d1cef011af9e83204cc6398898766cdcb112"
+                "reference": "ece6a3359f8fc8e2e5f247e11eda5d52f14c87d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Exanlv/pawl-life-support/zipball/3639d1cef011af9e83204cc6398898766cdcb112",
-                "reference": "3639d1cef011af9e83204cc6398898766cdcb112",
+                "url": "https://api.github.com/repos/Exanlv/pawl-life-support/zipball/ece6a3359f8fc8e2e5f247e11eda5d52f14c87d7",
+                "reference": "ece6a3359f8fc8e2e5f247e11eda5d52f14c87d7",
                 "shasum": ""
             },
             "require": {
                 "evenement/evenement": "^3.0 || ^2.0",
+                "exan/rfc6455": "^0.3.3",
                 "guzzlehttp/psr7": "^2.0 || ^1.7",
                 "php": ">=5.4",
-                "ratchet/rfc6455": "^0.3.1",
                 "react/promise": "^3.0",
                 "react/socket": "^1.9"
             },
@@ -329,9 +330,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Exanlv/pawl-life-support/issues",
-                "source": "https://github.com/Exanlv/pawl-life-support/tree/0.4.3"
+                "source": "https://github.com/Exanlv/pawl-life-support/tree/0.4.4"
             },
-            "time": "2025-01-30T18:49:11+00:00"
+            "time": "2025-02-09T16:50:20+00:00"
         },
         {
             "name": "exan/reactphp-retrier",
@@ -379,6 +380,63 @@
                 "source": "https://github.com/rxak-php/ReactPHP-Retrier/tree/2.0.0"
             },
             "time": "2024-12-19T12:58:21+00:00"
+        },
+        {
+            "name": "exan/rfc6455",
+            "version": "v0.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Exanlv/RFC6455.git",
+                "reference": "a71de8d9f20a22c61eb6e307ee9fca037b5a42a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Exanlv/RFC6455/zipball/a71de8d9f20a22c61eb6e307ee9fca037b5a42a8",
+                "reference": "a71de8d9f20a22c61eb6e307ee9fca037b5a42a8",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/psr7": "^2 || ^1.7",
+                "php": ">=5.4.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "react/socket": "^1.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ratchet\\RFC6455\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Boden",
+                    "email": "cboden@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Matt Bonneau",
+                    "role": "Developer"
+                }
+            ],
+            "description": "RFC6455 WebSocket protocol handler",
+            "homepage": "http://socketo.me",
+            "keywords": [
+                "WebSockets",
+                "rfc6455",
+                "websocket"
+            ],
+            "support": {
+                "chat": "https://gitter.im/reactphp/reactphp",
+                "issues": "https://github.com/ratchetphp/RFC6455/issues",
+                "source": "https://github.com/Exanlv/RFC6455/tree/v0.3.3"
+            },
+            "time": "2025-02-09T16:45:28+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -762,16 +820,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.72.6",
+            "version": "2.73.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "1e9d50601e7035a4c61441a208cb5bed73e108c5"
+                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/1e9d50601e7035a4c61441a208cb5bed73e108c5",
-                "reference": "1e9d50601e7035a4c61441a208cb5bed73e108c5",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/9228ce90e1035ff2f0db84b40ec2e023ed802075",
+                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075",
                 "shasum": ""
             },
             "require": {
@@ -865,7 +923,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-27T09:28:11+00:00"
+            "time": "2025-01-08T20:10:23+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1235,63 +1293,6 @@
                 "source": "https://github.com/ralouphie/mimey/tree/master"
             },
             "time": "2016-09-28T03:36:23+00:00"
-        },
-        {
-            "name": "ratchet/rfc6455",
-            "version": "v0.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ratchetphp/RFC6455.git",
-                "reference": "7c964514e93456a52a99a20fcfa0de242a43ccdb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ratchetphp/RFC6455/zipball/7c964514e93456a52a99a20fcfa0de242a43ccdb",
-                "reference": "7c964514e93456a52a99a20fcfa0de242a43ccdb",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/psr7": "^2 || ^1.7",
-                "php": ">=5.4.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7",
-                "react/socket": "^1.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Ratchet\\RFC6455\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Boden",
-                    "email": "cboden@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Matt Bonneau",
-                    "role": "Developer"
-                }
-            ],
-            "description": "RFC6455 WebSocket protocol handler",
-            "homepage": "http://socketo.me",
-            "keywords": [
-                "WebSockets",
-                "rfc6455",
-                "websocket"
-            ],
-            "support": {
-                "chat": "https://gitter.im/reactphp/reactphp",
-                "issues": "https://github.com/ratchetphp/RFC6455/issues",
-                "source": "https://github.com/ratchetphp/RFC6455/tree/v0.3.1"
-            },
-            "time": "2021-12-09T23:20:49+00:00"
         },
         {
             "name": "react/async",
@@ -2674,16 +2675,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.12.1",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "123267b2c49fbf30d78a7b2d333f6be754b94845"
+                "reference": "024473a478be9df5fdaca2c793f2232fe788e414"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/123267b2c49fbf30d78a7b2d333f6be754b94845",
-                "reference": "123267b2c49fbf30d78a7b2d333f6be754b94845",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/024473a478be9df5fdaca2c793f2232fe788e414",
+                "reference": "024473a478be9df5fdaca2c793f2232fe788e414",
                 "shasum": ""
             },
             "require": {
@@ -2722,7 +2723,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.12.1"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.0"
             },
             "funding": [
                 {
@@ -2730,7 +2731,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-08T17:47:46+00:00"
+            "time": "2025-02-12T12:17:51+00:00"
         },
         {
             "name": "nikic/php-parser",

@@ -8,8 +8,8 @@ use Ragnarok\Fenrir\Discord;
 use Ragnarok\Fenrir\Interaction\CommandInteraction;
 use Ragnarok\Fenrir\Interaction\Helpers\InteractionCallbackBuilder;
 use Psr\Log\LoggerInterface;
+use Ragnarok\Fenrir\Command\AllCommandExtension;
 use Ragnarok\Fenrir\Command\CommandExtension;
-use Ragnarok\Fenrir\Command\GlobalCommandExtension;
 use Ragnarok\Fenrir\Constants\Events;
 use Ragnarok\Fenrir\Enums\InteractionCallbackType;
 use Ragnarok\Fenrir\Gateway\Events\Ready;
@@ -33,7 +33,7 @@ class StabilityBot
             ->withRest();
 
         $this->discord->gateway->events->once(Events::READY, function (Ready $ready) {
-            $commandExtension = new GlobalCommandExtension($ready->application->id);
+            $commandExtension = new AllCommandExtension($ready->application->id);
 
             $this->discord->registerExtension($commandExtension);
 

@@ -24,14 +24,14 @@ class Cat
      */
     public static function fetch(?LoopInterface $loop = null): PromiseInterface
     {
-        $url = self::BASE_URL . 'cat?json=true';
+        $url = self::BASE_URL . 'cat';
 
         $http = new Browser(loop: $loop);
 
-        return $http->get($url)->then(function (ResponseInterface $response) {
+        return $http->get($url, ['Accept' => 'application/json'])->then(function (ResponseInterface $response) {
             $body = json_decode((string) $response->getBody());
 
-            return new Cat(self::BASE_URL . 'cat/' . $body->_id);
+            return new Cat(self::BASE_URL . 'cat/' . $body->id);
         });
     }
 

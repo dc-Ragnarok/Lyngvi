@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "ragnarok/fenrir": "dev-feature/http-0.0.2@dev",
+        "ragnarok/fenrir": "dev-feature/http-0.0.3@dev",
         "discord-php/http": "@dev",
         "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^3.2",

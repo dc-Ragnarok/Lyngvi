@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be6e279917a711638e26ea22a6790975",
+    "content-hash": "3b1d6e0dd99978969574c8f7c6005019",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -1153,16 +1153,16 @@
         },
         {
             "name": "ragnarok/fenrir",
-            "version": "dev-feature/http-0.0.2",
+            "version": "dev-feature/http-0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dc-Ragnarok/Fenrir.git",
-                "reference": "ec4668480297c009ad4354ab78ddf0fb491abc4a"
+                "reference": "8aa502cd691f0ba86fc288846356ba9ac5c10bfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/ec4668480297c009ad4354ab78ddf0fb491abc4a",
-                "reference": "ec4668480297c009ad4354ab78ddf0fb491abc4a",
+                "url": "https://api.github.com/repos/dc-Ragnarok/Fenrir/zipball/8aa502cd691f0ba86fc288846356ba9ac5c10bfc",
+                "reference": "8aa502cd691f0ba86fc288846356ba9ac5c10bfc",
                 "shasum": ""
             },
             "require": {
@@ -1202,9 +1202,9 @@
             "description": "Discord API & WS wrapper",
             "support": {
                 "issues": "https://github.com/dc-Ragnarok/Fenrir/issues",
-                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/dev-http-0.0.2"
+                "source": "https://github.com/dc-Ragnarok/Fenrir/tree/feature/http"
             },
-            "time": "2025-02-16T14:27:18+00:00"
+            "time": "2025-03-09T11:46:29+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -2282,16 +2282,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v6.4.13",
+            "version": "v6.4.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "bee9bfabfa8b4045a66bf82520e492cddbaffa66"
+                "reference": "3b9bf9f33997c064885a7bfc126c14b9daa0e00e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/bee9bfabfa8b4045a66bf82520e492cddbaffa66",
-                "reference": "bee9bfabfa8b4045a66bf82520e492cddbaffa66",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/3b9bf9f33997c064885a7bfc126c14b9daa0e00e",
+                "reference": "3b9bf9f33997c064885a7bfc126c14b9daa0e00e",
                 "shasum": ""
             },
             "require": {
@@ -2357,7 +2357,7 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/translation/tree/v6.4.13"
+                "source": "https://github.com/symfony/translation/tree/v6.4.19"
             },
             "funding": [
                 {
@@ -2373,7 +2373,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-27T18:14:25+00:00"
+            "time": "2025-02-13T10:18:43+00:00"
         },
         {
             "name": "symfony/translation-contracts",

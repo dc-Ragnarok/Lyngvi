@@ -12,6 +12,4 @@ RUN apt-get install php-cli php-xml composer php-bcmath -y
 RUN composer install --no-dev
 RUN composer dump-autoload -o
 
-RUN php ./_register-commands.php
-
-CMD [ "php", "./_index.php" ]
+CMD [ "./run.sh" ]
